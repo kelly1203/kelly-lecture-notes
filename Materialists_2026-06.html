@@ -1,0 +1,3255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Materialists — 2026.06 | Kelly's All-Kill LVL.2</title>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pink: #F548A8;
+  --pink-light: #fde8f4;
+  --pink-pale: #fff0fa;
+  --cream: #EDE8DF;
+  --black: #1A1A1A;
+  --gray: #555;
+  --gray-light: #888;
+  --teal: #e0f5f0;
+  --teal-dark: #007a6a;
+  --amber: #fff3cd;
+  --amber-dark: #7a5c00;
+  --purple-light: #f0ecff;
+  --purple-dark: #4a2d9c;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nanum Myeongjo', Georgia, serif;
+  background: var(--cream);
+  color: var(--black);
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── Progress bar ── */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--pink);
+  z-index: 9999;
+  transition: width 0.1s;
+}
+
+/* ── Navigation ── */
+nav {
+  width: 220px;
+  min-width: 220px;
+  background: var(--black);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px 0 40px;
+  z-index: 100;
+  scrollbar-width: thin;
+  scrollbar-color: #333 var(--black);
+}
+
+nav h2 {
+  font-family: Georgia, serif;
+  font-size: 11px;
+  color: var(--pink);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 16px 12px;
+  border-bottom: 1px solid #2a2a2a;
+  margin-bottom: 10px;
+}
+
+.nav-movie {
+  padding: 6px 16px;
+  font-size: 15px;
+  color: #fff;
+  font-style: italic;
+  font-family: Georgia, serif;
+}
+
+.nav-month {
+  padding: 2px 16px 10px;
+  font-size: 12px;
+  color: var(--pink);
+  letter-spacing: 1px;
+}
+
+.nav-day-label {
+  padding: 10px 16px 4px;
+  font-size: 10px;
+  color: #444;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-top: 1px solid #2a2a2a;
+  margin-top: 4px;
+}
+
+nav a {
+  display: block;
+  padding: 5px 16px;
+  font-size: 12px;
+  color: #bbb;
+  text-decoration: none;
+  line-height: 1.5;
+  transition: color 0.15s, background 0.15s;
+}
+
+nav a:hover { color: var(--pink); background: #1e1e1e; }
+nav a.active { color: var(--pink); font-weight: bold; }
+
+.nav-grammar { color: var(--teal-dark) !important; }
+.nav-grammar:hover { color: #00c9a7 !important; }
+.nav-wrapup { color: var(--pink) !important; }
+
+/* ── Layout ── */
+main {
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+/* ── Site header ── */
+.site-header {
+  background: var(--black);
+  color: #fff;
+  border-bottom: 3px solid var(--pink);
+  padding: 14px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 90;
+}
+
+.site-header .brand {
+  font-family: Georgia, serif;
+  font-size: 10px;
+  color: var(--pink);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.site-header h1 {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  font-weight: normal;
+  color: #fff;
+}
+
+/* ── Day banner ── */
+.day-banner {
+  background: var(--black);
+  color: var(--pink);
+  padding: 10px 40px;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+}
+
+/* ── Content area ── */
+.content {
+  padding: 32px 40px 80px;
+}
+
+/* ── Dialogue block ── */
+.dialogue-block {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.dialogue-header {
+  background: var(--black);
+  color: var(--pink);
+  padding: 12px 24px;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+}
+
+.dialogue-content { padding: 20px 24px; }
+
+.dialogue-item {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dialogue-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.dialogue-line {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--black);
+  line-height: 1.65;
+  margin-bottom: 4px;
+}
+
+.dialogue-kr { font-size: 12.5px; color: var(--gray); line-height: 1.6; }
+
+.dialogue-tag {
+  display: inline-block;
+  background: var(--pink-light);
+  color: var(--pink);
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-top: 6px;
+  font-family: Georgia, serif;
+  letter-spacing: 0.5px;
+}
+
+/* ── Expression cards ── */
+.expr-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.expr-header {
+  background: var(--black);
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.expr-num {
+  background: var(--pink);
+  color: #fff;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.expr-title {
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.expr-kr { font-size: 13px; color: #bbb; margin-top: 3px; }
+
+/* Def block */
+.def-block {
+  background: var(--pink-light);
+  padding: 16px 24px;
+  border-bottom: 1px solid #f5c8e8;
+}
+
+.block-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  font-family: Georgia, serif;
+  color: var(--pink);
+}
+
+.def-content { font-size: 14px; line-height: 1.8; }
+
+/* Examples block */
+.examples-block {
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.examples-block .block-label { color: var(--gray); }
+
+.example-pair { margin-bottom: 13px; }
+.example-pair:last-child { margin-bottom: 0; }
+
+.example-kr { font-size: 13px; color: var(--gray); margin-bottom: 3px; }
+
+.example-en {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  color: var(--black);
+  font-style: italic;
+}
+
+/* Alts block */
+.alts-block {
+  background: #fafafa;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.alts-block .block-label { color: var(--gray); }
+
+.alt-item { margin-bottom: 11px; font-size: 13.5px; line-height: 1.65; }
+.alt-item:last-child { margin-bottom: 0; }
+.alt-item .alt-expr { font-family: Georgia, serif; font-weight: bold; }
+.alt-item .alt-stars { color: var(--pink); font-size: 11px; }
+.alt-item .alt-kr { color: var(--gray); font-size: 12.5px; }
+.alt-item .alt-ex { font-style: italic; color: var(--gray); font-size: 12.5px; display: block; margin-left: 14px; }
+
+/* Reactions block */
+.reactions-block {
+  background: var(--purple-light);
+  padding: 16px 24px;
+  border-bottom: 1px solid #ddd;
+}
+
+.reactions-block .block-label { color: var(--purple-dark); }
+.reaction-item { font-size: 13px; line-height: 1.8; }
+
+/* Speaking Practice */
+.sp-block { background: var(--pink-pale); padding: 16px 24px; }
+.sp-block .block-label { color: var(--pink); }
+
+.sp-q {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--black);
+  margin-bottom: 10px;
+  line-height: 1.65;
+}
+
+.sp-answer {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.9;
+  padding-left: 16px;
+  border-left: 2px solid var(--pink);
+}
+
+/* Teacher notes */
+.teacher-notes { border-top: 2px solid #eee; }
+
+.teacher-notes summary {
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--gray-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.teacher-notes summary::before { content: '📒'; font-size: 14px; }
+.teacher-notes summary::-webkit-details-marker { display: none; }
+.teacher-notes[open] summary { color: var(--amber-dark); background: var(--amber); }
+
+.notes-content {
+  padding: 16px 24px 20px;
+  background: #fffdf5;
+}
+
+.note-section {
+  border-left: 3px solid #ddd;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.note-section:last-child { margin-bottom: 0; }
+.note-section.note-highlight { border-left-color: var(--amber-dark); background: var(--amber); }
+.note-section.note-verified { border-left-color: var(--teal-dark); background: var(--teal); }
+
+.note-section h4 {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  margin-bottom: 6px;
+  font-family: Georgia, serif;
+}
+
+.note-section.note-highlight h4 { color: var(--amber-dark); }
+.note-section.note-verified h4 { color: var(--teal-dark); }
+
+/* ── Grammar card ── */
+.grammar-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  border-top: 4px solid var(--teal-dark);
+}
+
+.grammar-header {
+  background: var(--teal);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grammar-tag {
+  background: var(--teal-dark);
+  color: #fff;
+  font-size: 10px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-family: Georgia, serif;
+  letter-spacing: 1px;
+}
+
+.grammar-title {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--teal-dark);
+}
+
+.grammar-content { padding: 20px 24px; }
+
+.grammar-rule {
+  background: #f0fdfb;
+  border-left: 3px solid var(--teal-dark);
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  font-size: 13.5px;
+  line-height: 1.85;
+}
+
+.grammar-rule .rule-head {
+  font-weight: bold;
+  color: var(--teal-dark);
+  margin-bottom: 4px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.g-example {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: var(--black);
+}
+
+.g-kr { color: var(--gray); font-size: 12.5px; }
+
+.grammar-tip {
+  background: var(--amber);
+  border-left: 3px solid var(--amber-dark);
+  padding: 10px 14px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--amber-dark);
+  margin-bottom: 14px;
+}
+
+.grammar-notes { border-top: 2px solid #eee; }
+
+.grammar-notes summary {
+  padding: 12px 24px;
+  cursor: pointer;
+  font-size: 11px;
+  color: var(--teal-dark);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  user-select: none;
+}
+
+.grammar-notes summary::before { content: '📒'; font-size: 14px; }
+.grammar-notes summary::-webkit-details-marker { display: none; }
+.grammar-notes[open] summary { background: var(--amber); color: var(--amber-dark); }
+.grammar-notes .notes-content { background: #fffdf5; }
+
+/* ── Wrapup section ── */
+.wrapup-section {
+  background: var(--black);
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin-bottom: 32px;
+}
+
+.wrapup-header {
+  color: var(--pink);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: Georgia, serif;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.wrapup-item {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.wrapup-num {
+  color: var(--pink);
+  font-family: Georgia, serif;
+  min-width: 22px;
+  font-size: 13px;
+  padding-top: 2px;
+}
+
+.wrapup-expr {
+  font-family: Georgia, serif;
+  font-style: italic;
+  color: #fff;
+  flex: 0 0 auto;
+  margin-right: 8px;
+}
+
+.wrapup-kr { color: #aaa; font-size: 13px; }
+
+.wrapup-grammar {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.wrapup-grammar-item {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.wrapup-grammar-tag {
+  background: var(--teal-dark);
+  color: #fff;
+  font-size: 9px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+/* ── Print ── */
+@media print {
+  nav, #progress-bar { display: none; }
+  main { max-width: 100%; }
+  .teacher-notes, .grammar-notes { display: block; }
+  details[open] summary, details summary { background: none; }
+  .notes-content { display: block !important; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- ══ Navigation ══ -->
+<nav id="sidebar">
+  <h2>Kelly's LVL.2</h2>
+  <div class="nav-movie">Materialists</div>
+  <div class="nav-month">2026년 6월</div>
+
+  <div class="nav-day-label">── Day 1 ──</div>
+  <a href="#dialogue">🎬 오늘의 대사</a>
+  <a href="#expr1">① recruit / recruitment</a>
+  <a href="#expr2">② work (통하다)</a>
+  <a href="#expr3">③ I'm someone who ~</a>
+  <a href="#expr4">④ mind-numbingly…</a>
+  <a href="#expr5">⑤ non-negotiable</a>
+  <a href="#grammar" class="nav-grammar">📌 [G] what kind of</a>
+  <a href="#expr6">⑥ fall apart</a>
+  <a href="#expr7">⑦ develop (생겨나다)</a>
+  <a href="#expr8">⑧ good for ~ (진심↗ / 비꼼↘)</a>
+  <a href="#expr9">⑨ couldn't do better</a>
+  <a href="#expr10">⑩ smells + 형용사</a>
+  <a href="#wrapup" class="nav-wrapup">✓ 한눈에 정리</a>
+
+  <div class="nav-day-label">── Day 2 ──</div>
+  <a href="#d2-expr1">① That's the cheapest we'll ever get</a>
+  <a href="#d2-expr2">② It's been + 시간</a>
+  <a href="#d2-expr3">③ pay vs pay for</a>
+  <a href="#d2-expr4">④ extortion</a>
+  <a href="#d2-grammar1" class="nav-grammar">📌 [G1] Why would you ~?</a>
+  <a href="#d2-expr5">⑤ agree to vs agree on</a>
+  <a href="#d2-expr6">⑥ charge (someone) + 금액</a>
+  <a href="#d2-grammar2" class="nav-grammar">📌 [G2] Do you know how…</a>
+  <a href="#d2-expr7">⑦ make me feel like ~</a>
+  <a href="#d2-expr8">⑧ be broke</a>
+  <a href="#d2-expr9">⑨ I wish (that) ~</a>
+  <a href="#d2-grammar3" class="nav-grammar">📌 [G3] however + 형용사</a>
+  <a href="#d2-expr10">⑩ It's not because ~ It's because ~</a>
+  <a href="#d2-wrapup" class="nav-wrapup">✓ 한눈에 정리</a>
+
+  <div class="nav-day-label">── Day 3 ──</div>
+  <a href="#d3-grammar1" class="nav-grammar">📌 [G] start + V-ing vs to V</a>
+  <a href="#d3-expr1">① I want to meet someone who ~</a>
+  <a href="#d3-expr2">② combination of</a>
+  <a href="#d3-expr3">③ turn + 나이</a>
+  <a href="#d3-expr4">④ immature ↔ grown / mature</a>
+  <a href="#d3-expr5">⑤ I can imagine</a>
+  <a href="#d3-expr6">⑥ relate to</a>
+  <a href="#d3-expr7">⑦ trust your gut</a>
+  <a href="#d3-expr8">⑧ makes it hard not to</a>
+  <a href="#d3-wrapup" class="nav-wrapup">✓ 한눈에 정리</a>
+</nav>
+
+<!-- ══ Main ══ -->
+<main>
+
+  <!-- Site Header -->
+  <div class="site-header">
+    <div class="brand">Kelly's All-Kill English · LVL.2</div>
+    <h1>Materialists &nbsp;·&nbsp; 2026년 6월</h1>
+  </div>
+
+  <!-- Day 1 Banner -->
+  <div class="day-banner" id="day1">
+    📖 &nbsp;Day 1 — Materialists Set 8 &nbsp;/&nbsp; 6월 1회차
+  </div>
+
+  <div class="content">
+
+    <!-- ── Dialogue Block ── -->
+    <div id="dialogue" class="dialogue-block">
+      <div class="dialogue-header">🎬 오늘의 대사 — Materialists</div>
+      <div class="dialogue-content">
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">"Recruitment. Worked for your brother, so I think it will work for you."</div>
+          <div class="dialogue-kr">영업이죠. 오빠한테 통했으니까 당신한테도 통할 거예요.</div>
+          <span class="dialogue-tag">① recruit / ② work</span>
+        </div>
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">"I'm probably not someone you want to date."</div>
+          <div class="dialogue-kr">저는 아마 당신이 사귀고 싶은 사람이 아닐 거예요.</div>
+          <span class="dialogue-tag">③ I'm someone who ~</span>
+        </div>
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">"My non-negotiables are that they're rich. My nice-to-have is that they're mind-numbingly... absurdly... achingly... rich."</div>
+          <div class="dialogue-kr">저의 절대 조건은 그들이 부자인 것, 있으면 좋은 건 어이없을 정도로... 터무니없이... 사무치게... 부자인 것이요.</div>
+          <span class="dialogue-tag">④ mind-numbingly / absurdly / achingly &nbsp;&nbsp; ⑤ non-negotiable / nice-to-have</span>
+        </div>
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">"What kind of a person does a matchmaker want to marry?"</div>
+          <div class="dialogue-kr">매파는 어떤 사람이랑 결혼하고 싶을까요?</div>
+          <span class="dialogue-tag">[G] what kind of</span>
+        </div>
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">"It's falling apart. I never get hot water."</div>
+          <div class="dialogue-kr">다 망가져가고 있어. 온수도 안 나와.</div>
+          <span class="dialogue-tag">⑥ fall apart</span>
+        </div>
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">"I think Logan is developing a drinking problem."</div>
+          <div class="dialogue-kr">로건이 알코올 의존 문제가 생기고 있는 것 같아.</div>
+          <span class="dialogue-tag">⑦ develop</span>
+        </div>
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">Lucy: "Good for him." &nbsp;/&nbsp; John: "Is it?"</div>
+          <div class="dialogue-kr">잘됐네. / 진짜 잘된 거 맞아?</div>
+          <span class="dialogue-tag">⑧ good for ~</span>
+        </div>
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">"He's a 5'7" depressed novelist who's never been published. He couldn't do better."</div>
+          <div class="dialogue-kr">키 167cm에 우울한 미발표 소설가잖아. 그 사람으로선 최선이지.</div>
+          <span class="dialogue-tag">⑨ couldn't do better</span>
+        </div>
+
+        <div class="dialogue-item">
+          <div class="dialogue-line">"It smells the same."</div>
+          <div class="dialogue-kr">냄새가 똑같아.</div>
+          <span class="dialogue-tag">⑩ smells + 형용사</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ── Expression #1: recruit/recruitment ── -->
+    <div id="expr1" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">1</div>
+        <div>
+          <div class="expr-title">recruit / recruitment</div>
+          <div class="expr-kr">스카우트하다 / 영입하다 &nbsp;·&nbsp; 영입, 모집</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>recruit</strong> — 영입하다, 채용하다 &nbsp;/&nbsp; (명사) 신입, 새 멤버<br>
+          <strong>recruitment</strong> — 채용 과정, 모집 활동
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">나 좋은 자리 있으면 너 뽑고 싶어.</div><div class="example-en">I'd love to recruit you if something opens up.</div></div>
+        <div class="example-pair"><div class="example-kr">그 팀장이 나한테 같이 일하자고 연락 왔어.</div><div class="example-en">The team lead reached out to recruit me.</div></div>
+        <div class="example-pair"><div class="example-kr">저희 지금 영업팀 채용 중이에요.</div><div class="example-en">We're doing recruitment for the sales team right now.</div></div>
+        <div class="example-pair"><div class="example-kr">우리 회사 요즘 신입 뽑는 게 진짜 힘들어.</div><div class="example-en">Recruitment has been really tough lately.</div></div>
+        <div class="example-pair"><div class="example-kr">걔 우리 팀에 영입된 지 얼마 안 됐어.</div><div class="example-en">He was just recruited to our team.</div></div>
+        <div class="example-pair"><div class="example-kr">그분이 저를 이 업계로 끌어들인 분이에요.</div><div class="example-en">She's the one who recruited me into this field.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">hire (someone)</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 가장 일반적인 "채용하다"</span><span class="alt-ex">We just hired two new people. &nbsp;/&nbsp; I got hired last month.</span></div>
+        <div class="alt-item"><span class="alt-expr">headhunt (someone)</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— 경력직 스카우트 (recruit보다 적극적·타깃형)</span><span class="alt-ex">I got headhunted by a competitor. (경쟁사에서 스카우트 연락 왔어.)</span></div>
+        <div class="alt-item"><span class="alt-expr">bring someone on board</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— 팀/회사에 합류시키다</span><span class="alt-ex">We're looking to bring a few people on board.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever been recruited for something — a job, a club, or anything?</div>
+        <div class="sp-answer">
+          → Yeah, a friend recruited me to join her book club.<br>
+          → My manager actually recruited me from another department.<br>
+          → Not really — I've always applied on my own.<br>
+          → I was recruited for a volunteer project at work once.<br>
+          → Someone recruited me to join a group chat and now I can't leave.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"Recruitment. Worked for your brother, so I think it will work for you."</em><br>
+            해석: 영업이죠. 오빠한테 통했으니까 당신한테도 통할 거예요.<br>
+            → Lucy가 전화번호를 건네는 행동을 "연애 접근"이 아닌 "비즈니스 영입"이라고 농담처럼 프레이밍. recruit → recruitment 명사형 사용.
+          </div>
+          <div class="note-section">
+            <h4>품사 및 사전적 의미</h4>
+            <strong>recruit</strong> (동사/명사): to find and bring someone into a job, team, or organization — 영입하다, 채용하다 / 신입<br>
+            <strong>recruitment</strong> (명사): the process of recruiting — 주로 HR/회사 맥락에서 자주 등장
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 & 문화적 맥락</h4>
+            "recruit"는 공식 채용뿐 아니라 친구를 동아리에 끌어들이거나 이벤트 참여를 권유할 때도 일상적으로 사용.<br>
+            "recruitment process", "recruitment drive" 같은 조합이 흔함.
+          </div>
+          <div class="note-section">
+            <h4>발음 포인트</h4>
+            recruit: [rɪˈkruːt] — 강세 뒤 (re-CRUIT)<br>
+            recruitment: [rɪˈkruːtmənt] — 학습자가 "리크루트먼트" 식으로 각 음절을 다 발음하려는 경향. 실제로는 빠르게 흘림.
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트</h4>
+            recruit는 타동사: recruit + 사람 (전치사 없이)<br>
+            ✓ She recruited me. &nbsp;/&nbsp; ✗ She recruited to me.<br><br>
+            recruitment는 불가산명사로 쓰이는 경우가 많음:<br>
+            ✓ Recruitment is tough. &nbsp;/&nbsp; ✓ the recruitment process
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 일상 + 직장 맥락 모두 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #2: work ── -->
+    <div id="expr2" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">2</div>
+        <div>
+          <div class="expr-title">work</div>
+          <div class="expr-kr">(방법·계획·전략이) 통하다, 효과가 있다, 잘 되다</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>work</strong> — (방법·계획이) 효과가 있다, 통하다 / (시간·상황이) 맞다, 괜찮다<br>
+          <em>it works / it worked / it'll work / Does it work?</em>
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">그 방법 통해?</div><div class="example-en">Does that work?</div></div>
+        <div class="example-pair"><div class="example-kr">잘 됐어, 효과 있었어.</div><div class="example-en">It worked.</div></div>
+        <div class="example-pair"><div class="example-kr">이거 나한테는 잘 안 맞는 것 같아.</div><div class="example-en">This doesn't really work for me.</div></div>
+        <div class="example-pair"><div class="example-kr">우리한테는 잘 맞을 것 같아.</div><div class="example-en">I think it'll work for us.</div></div>
+        <div class="example-pair"><div class="example-kr">그 전략이 지난번엔 통했어.</div><div class="example-en">That strategy worked last time.</div></div>
+        <div class="example-pair"><div class="example-kr">우리 스케줄이 맞을지 모르겠어.</div><div class="example-en">I'm not sure if our schedules will work.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">work out</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 잘 풀리다, 잘 되다 (결과적으로)</span><span class="alt-ex">It worked out perfectly. &nbsp;/&nbsp; I hope things work out for you.</span></div>
+        <div class="alt-item"><span class="alt-expr">pay off</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— (노력이) 결실을 맺다, 보람이 있다</span><span class="alt-ex">All that studying finally paid off.</span></div>
+        <div class="alt-item"><span class="alt-expr">do the trick</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— (원하는 결과를) 해내다, 딱 통하다</span><span class="alt-ex">A little duct tape should do the trick.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Think of something you tried recently — did it work?</div>
+        <div class="sp-answer">
+          → I tried a new morning routine and it actually worked.<br>
+          → I tried talking to my manager about it and it worked out.<br>
+          → I tried a new recipe but it didn't really work.<br>
+          → I changed my study method and it's been working really well.<br>
+          → I took a break from my phone for a week — it worked better than I expected.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"Worked for your brother, so I think it will work for you."</em><br>
+            해석: 오빠한테 통했으니까 당신한테도 통할 거예요.<br>
+            → "전략이나 방법이 효과가 있다"는 의미. "work for + 사람"으로 특정 대상에게 효과가 있음을 표현.
+          </div>
+          <div class="note-section note-highlight">
+            <h4>핵심 교정 포인트</h4>
+            학습자가 "work"를 항상 "일하다"로만 해석하는 경향 있음 → 집중 교정 필요.<br>
+            "Does this work for you?" = 이 시간/방법이 괜찮아요? (미팅 잡을 때 필수 표현)<br>
+            "It works for me." = 나한텐 괜찮아. / 나한테 잘 맞아.
+          </div>
+          <div class="note-section">
+            <h4>품사 및 사전적 의미 (자동사 3가지)</h4>
+            1) to be effective or successful — 효과가 있다, 통하다<br>
+            2) to function properly — (기계·시스템이) 작동하다<br>
+            3) to be suitable or convenient — (시간·상황이) 맞다, 괜찮다
+          </div>
+          <div class="note-section">
+            <h4>발음 포인트</h4>
+            "worked"의 -ed는 [t] 발음: [wɜːrkt]<br>
+            "it'll work" 연음: [ɪɾəl wɜːrk] 빠르게
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트</h4>
+            work (자동사) vs work on something (타동사구) 구분<br>
+            It works. (통해.) vs I'm working on it. (하는 중이야.)<br><br>
+            work for + 사람: ~에게 효과가 있다 / ~한테 맞다<br>
+            work out: 결과적으로 잘 되다 (과정보다 결과 초점)
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 매우 자주 사용 — "Does it work?" "It worked!" "That doesn't work for me." 모두 필수 표현
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #3: I'm someone who ~ ── -->
+    <div id="expr3" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">3</div>
+        <div>
+          <div class="expr-title">I'm someone who ~ &nbsp;/&nbsp; He's someone who ~</div>
+          <div class="expr-kr">나는 / 걔는 ~하는 사람이야</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>(I'm / He's / She's) someone who ~</strong> — 나는/걔는 ~하는 사람이야<br>
+          <strong>(I'm / He's) not someone you want to ~</strong> — 나는 네가 ~하고 싶은 사람이 아니야<br>
+          <strong>+ I'm the one who ~</strong> — 내가 ~하는 사람이야 (특정 역할 강조)
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">나는 규칙을 잘 지키는 사람이야.</div><div class="example-en">I'm someone who likes to follow rules.</div></div>
+        <div class="example-pair"><div class="example-kr">걔는 항상 늦는 사람이야.</div><div class="example-en">He's someone who's always late.</div></div>
+        <div class="example-pair"><div class="example-kr">나 그냥 조용히 혼자 있고 싶은 사람이야.</div><div class="example-en">I'm someone who needs a lot of alone time.</div></div>
+        <div class="example-pair"><div class="example-kr">나 지금 사귀기 좋은 사람이 아닐 수도 있어.</div><div class="example-en">I'm probably not someone you want to date.</div></div>
+        <div class="example-pair"><div class="example-kr">걔는 쉽게 포기 안 하는 스타일이야.</div><div class="example-en">She's not someone who gives up easily.</div></div>
+        <div class="example-pair"><div class="example-kr">나는 그냥 있는 그대로를 말하는 사람이야.</div><div class="example-en">I'm someone who just says it like it is.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">+ I'm the one who ~ 확장</div>
+        <div class="alt-item"><span class="alt-kr">나 이런 거 잘 챙기는 편이야.</span><span class="alt-ex">I'm the one who usually takes care of this stuff.</span></div>
+        <div class="alt-item"><span class="alt-kr">나한테 그런 거 기대하지 마.</span><span class="alt-ex">I'm not the one to ask about that.</span></div>
+        <div class="alt-item"><span class="alt-kr">이게 바로 내가 맡은 역할이야.</span><span class="alt-ex">I'm the one who handles that.</span></div>
+      </div>
+
+      <div class="alts-block" style="border-top:1px solid #eee;">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">I tend to ~</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 나는 ~하는 경향이 있어</span><span class="alt-ex">I tend to overthink things.</span></div>
+        <div class="alt-item"><span class="alt-expr">I'm the type who / I'm the type to ~</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 나는 ~하는 타입이야</span><span class="alt-ex">I'm the type who needs a plan.</span></div>
+        <div class="alt-item"><span class="alt-expr">That's not really me</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— 그건 나답지 않아 / 나 그런 사람 아니야</span><span class="alt-ex">That's not really me — I like staying in.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: How would you describe yourself to someone who doesn't know you?</div>
+        <div class="sp-answer">
+          → I'm someone who takes a while to open up.<br>
+          → I'm someone who needs structure to feel okay.<br>
+          → I'm not someone who likes small talk — I prefer deeper conversations.<br>
+          → I'm someone who shows love through food.<br>
+          → I'm probably not someone you'd notice right away, but I'm a good friend.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"I'm probably not someone you want to date."</em><br>
+            해석: 저는 아마 당신이 사귀고 싶은 사람이 아닐 거예요.<br>
+            → 자신을 상대방 기준에서 설명하는 패턴. "someone you want to ~" = 네가 ~하고 싶은 유형의 사람.
+          </div>
+          <div class="note-section">
+            <h4>두 패턴의 차이</h4>
+            <strong>"someone"</strong> — 성향 일반 묘사 (I'm someone who loves coffee.)<br>
+            <strong>"the one"</strong> — 특정 상황·역할에서의 나 (I'm the one who handles that.)
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트</h4>
+            someone who + 현재시제: 습관·성향 (I'm someone who loves coffee.)<br>
+            someone who + 과거시제: 과거 경험 (I'm not someone who's done this before.)<br>
+            "I'm the one to ~" 뒤엔 동사원형: I'm not the one to judge.
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 일상에서 매우 자주 사용 — 자기소개, 관계 시작, 갈등 상황 모두에서 활용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #4: mind-numbingly / absurdly / achingly ── -->
+    <div id="expr4" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">4</div>
+        <div>
+          <div class="expr-title">mind-numbingly / absurdly / achingly</div>
+          <div class="expr-kr">어이없을 정도로 / 터무니없이 / 사무치게 + 형용사</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>mind-numbingly</strong> — 정신이 멍해질 만큼, 어이없을 정도로<br>
+          <strong>absurdly</strong> — 불합리하고 터무니없을 정도로<br>
+          <strong>achingly</strong> — 가슴이 아플 만큼, 사무치게<br>
+          <em style="color:var(--gray);font-size:13px;">모두 형용사 앞에 놓이는 강조 부사</em>
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">이 회의 진짜 어이없을 정도로 지루해.</div><div class="example-en">This meeting is mind-numbingly boring.</div></div>
+        <div class="example-pair"><div class="example-kr">그 드라마 터무니없이 재밌어. 못 끊겠어.</div><div class="example-en">That show is absurdly good. I can't stop watching.</div></div>
+        <div class="example-pair"><div class="example-kr">그 노래 들을 때마다 사무치게 아름다워.</div><div class="example-en">That song is achingly beautiful every time I hear it.</div></div>
+        <div class="example-pair"><div class="example-kr">이 문제 어이없을 정도로 단순해.</div><div class="example-en">This problem is mind-numbingly simple.</div></div>
+        <div class="example-pair"><div class="example-kr">집값이 터무니없이 올랐어.</div><div class="example-en">Housing prices are absurdly high right now.</div></div>
+        <div class="example-pair"><div class="example-kr">그 장면 진짜 사무치게 슬펐어.</div><div class="example-en">That scene was achingly sad.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">ridiculously</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 터무니없이, 말도 안 되게 (가장 일상적)</span><span class="alt-ex">It's ridiculously expensive.</span></div>
+        <div class="alt-item"><span class="alt-expr">insanely</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 미칠 정도로 (강조 구어체)</span><span class="alt-ex">She's insanely talented.</span></div>
+        <div class="alt-item"><span class="alt-expr">painfully</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— 고통스러울 정도로 (achingly와 유사)</span><span class="alt-ex">He's painfully shy.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Describe something in your life right now using one of these words — absurdly, ridiculously, or mind-numbingly.</div>
+        <div class="sp-answer">
+          → My commute is ridiculously long.<br>
+          → My inbox is absurdly full right now.<br>
+          → Some of the meetings I go to are mind-numbingly boring.<br>
+          → The coffee here is absurdly expensive.<br>
+          → My schedule lately has been ridiculously packed.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"My nice-to-have is that they're mind-numbingly... absurdly... achingly... rich."</em><br>
+            → 세 부사를 연속으로 쌓아 유머러스하게 강조. Lucy의 냉소적인 유머 포인트.
+          </div>
+          <div class="note-section note-highlight">
+            <h4>수업 전략 — 학생 직접 쓰기 vs 이해 위주 구분</h4>
+            직접 써도 OK: <strong>absurdly, ridiculously</strong><br>
+            이해 위주 권장: <strong>mind-numbingly</strong> (특정 상황), <strong>achingly</strong> (문어체·감성 글)
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 차이</h4>
+            mind-numbingly: 주로 부정적·지루한 것에 사용 (boring/repetitive)<br>
+            absurdly: 긍정/부정 모두 가능 (absurdly good / absurdly expensive)<br>
+            achingly: 시적·감성적 뉘앙스. 일상 구어에서는 드묾.
+          </div>
+          <div class="note-section">
+            <h4>발음 포인트</h4>
+            mind-numbingly: [maɪnd ˈnʌmɪŋli] — "numbing"의 b는 묵음<br>
+            absurdly: [əbˈsɜːrdli] — 강세 앞 (ab-SURD-ly)<br>
+            achingly: [ˈeɪkɪŋli]
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ridiculously / absurdly: ✅ 일상에서 자주 사용<br>
+            mind-numbingly: ⚠️ 특정 상황 (지루함 강조)에서 사용<br>
+            achingly: ⚠️ 문어체·감성 글에서 주로 사용 — 이해 위주로 교육 권장
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #5: non-negotiable / nice-to-have ── -->
+    <div id="expr5" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">5</div>
+        <div>
+          <div class="expr-title">non-negotiable &nbsp;/&nbsp; nice-to-have</div>
+          <div class="expr-kr">절대 양보할 수 없는 조건 / 있으면 좋은 것</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>non-negotiable</strong> — 협상 불가능한, 절대 조건<br>
+          <strong>nice-to-have</strong> — 있으면 좋지만 필수는 아닌 것<br>
+          <em style="color:var(--gray);font-size:13px;">원래 비즈니스 협상 용어 → 현재는 연애·집·직장 모든 맥락에서 사용</em>
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">나한테 성실함은 절대 타협 없는 조건이야.</div><div class="example-en">Honesty is a non-negotiable for me.</div></div>
+        <div class="example-pair"><div class="example-kr">우리 집 구하는데 반려동물 가능 여부는 무조건이야.</div><div class="example-en">Being pet-friendly is non-negotiable for our new place.</div></div>
+        <div class="example-pair"><div class="example-kr">수영장은 있으면 좋은 거고, 주차장은 무조건이야.</div><div class="example-en">A pool is a nice-to-have, but parking is non-negotiable.</div></div>
+        <div class="example-pair"><div class="example-kr">이 기능은 필수는 아닌데 있으면 좋아.</div><div class="example-en">This feature is a nice-to-have, not a must.</div></div>
+        <div class="example-pair"><div class="example-kr">내가 누굴 만나든 유머 감각은 무조건이야.</div><div class="example-en">A sense of humor is non-negotiable for me in a partner.</div></div>
+        <div class="example-pair"><div class="example-kr">재택근무 가능 여부는 있으면 좋지만 필수는 아니야.</div><div class="example-en">Remote work options are a nice-to-have for me.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">deal-breaker</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 절대 안 되는 것, 관계/계약 파기 요소</span><span class="alt-ex">Lying is a total deal-breaker for me.</span></div>
+        <div class="alt-item"><span class="alt-expr">must-have</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 반드시 있어야 하는 것</span><span class="alt-ex">Good communication is a must-have in any relationship.</span></div>
+        <div class="alt-item"><span class="alt-expr">dealmaker</span> <span class="alt-stars">⭐⭐</span> <span class="alt-kr">— 계약을 성사시키는 요소 (deal-breaker 반대)</span><span class="alt-ex">Free delivery was the dealmaker for me.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: What's one non-negotiable you have — in a job, a relationship, or a home?</div>
+        <div class="sp-answer">
+          → Kindness is non-negotiable for me in any relationship.<br>
+          → For a job, work-life balance is non-negotiable.<br>
+          → When I look for an apartment, a washing machine is non-negotiable.<br>
+          → In a friendship, loyalty is non-negotiable for me.<br>
+          → For me, having a good commute is non-negotiable.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"My non-negotiables are that they're rich. My nice-to-have is that they're mind-numbingly... rich."</em><br>
+            → 비즈니스 용어를 연애 조건에 적용해 유머 효과. Lucy의 솔직하고 냉소적인 캐릭터를 보여주는 핵심 대사.
+          </div>
+          <div class="note-section note-highlight">
+            <h4>세트로 가르치기</h4>
+            <strong>nice-to-have vs must-have vs non-negotiable</strong> 세 표현을 세트로 가르치면 효과적!
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 & 문화적 맥락</h4>
+            "That's non-negotiable." 단독으로도 자주 씀.<br>
+            2020년대 들어 일상 맥락에서 사용 빈도 급증.
+          </div>
+          <div class="note-section">
+            <h4>발음 포인트</h4>
+            non-negotiable: [nɒnɪˈɡoʊʃiəbəl] — 5음절, 강세 3번째 (non-ne-GO-tia-ble)<br>
+            빠른 구어에서 "non-ne-GO-shable"처럼 들리기도 함
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 직장·연애·일상에서 매우 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Grammar [G]: what kind of vs what kinds of ── -->
+    <div id="grammar" class="grammar-card">
+      <div class="grammar-header">
+        <span class="grammar-tag">Grammar [G]</span>
+        <span class="grammar-title">what kind of &nbsp;vs&nbsp; what kinds of</span>
+      </div>
+
+      <div class="grammar-content">
+
+        <div class="grammar-rule">
+          <div class="rule-head">Rule 1 — what kind of + 단수명사 → 단수 동사</div>
+          <span class="g-example">What kind of person is she?</span> &nbsp;<span class="g-kr">(걔 어떤 사람이야?)</span>
+        </div>
+
+        <div class="grammar-rule">
+          <div class="rule-head">Rule 2 — what kind of + 복수명사 → 복수 동사</div>
+          <span class="g-example">What kind of books do you like?</span> &nbsp;<span class="g-kr">(어떤 책 좋아해?)</span>
+        </div>
+
+        <div class="grammar-rule">
+          <div class="rule-head">Rule 3 — what kinds of → 여러 종류를 구체적으로 나눠 물을 때</div>
+          <span class="g-example">What kinds of music do you listen to?</span> &nbsp;<span class="g-kr">(어떤 장르들 들어?)</span>
+        </div>
+
+        <div class="grammar-tip">
+          💡 <strong>일상 회화에서는?</strong><br>
+          "What kind of ~?" 가 훨씬 더 자주 쓰임.<br>
+          "What kinds of ~?" 는 종류가 여러 개임을 강조할 때만 사용.
+        </div>
+
+        <div class="grammar-rule" style="background:var(--pink-pale); border-left-color:var(--pink);">
+          <div class="rule-head" style="color:var(--pink);">연습 문장</div>
+          <span class="g-example">What kind of person do you want to marry?</span> &nbsp;<span class="g-kr">(어떤 사람이랑 결혼하고 싶어?)</span><br>
+          <span class="g-example">What kind of food do you like?</span> &nbsp;<span class="g-kr">(어떤 음식 좋아해?)</span><br>
+          <span class="g-example">What kinds of movies are popular right now?</span> &nbsp;<span class="g-kr">(요즘 어떤 장르들이 인기야?)</span>
+        </div>
+
+        <details class="grammar-notes">
+          <summary>강사노트 열기 / 닫기</summary>
+          <div class="notes-content">
+            <div class="note-section note-highlight">
+              <h4>대사 속 쓰임</h4>
+              원문: <em>"What kind of a person does a matchmaker want to marry?"</em><br>
+              → "what kind of a + 단수명사" — a가 들어가는 패턴은 격식체에서 가끔 등장. 일상에서는 "what kind of person" (a 없이)이 훨씬 자연스러움.
+            </div>
+            <div class="note-section note-verified">
+              <h4>수업 핵심 포인트</h4>
+              헷갈리면 <strong>"what kind of"로 통일해도 거의 다 맞음.</strong><br>
+              kinds는 진짜 여러 종류를 나열할 때만 사용.
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+
+    <!-- ── Expression #6: fall apart ── -->
+    <div id="expr6" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">6</div>
+        <div>
+          <div class="expr-title">fall apart</div>
+          <div class="expr-kr">(물건이) 다 낡아서 망가지다 / (상황·관계가) 무너지다, 엉망이 되다</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>fall apart</strong> — (물리적으로) 산산조각 나다, 다 낡아 망가지다<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (관계·조직·계획이) 무너지다, 결렬되다<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (사람이) 감정적으로 무너지다
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">내 차 진짜 다 망가져가고 있어.</div><div class="example-en">My car is falling apart.</div></div>
+        <div class="example-pair"><div class="example-kr">그 커플 헤어진 거 알아? 관계가 다 틀어졌어.</div><div class="example-en">Did you hear? Their relationship fell apart.</div></div>
+        <div class="example-pair"><div class="example-kr">계획이 마지막 순간에 다 틀어졌어.</div><div class="example-en">The plan fell apart at the last minute.</div></div>
+        <div class="example-pair"><div class="example-kr">그분 돌아가신 뒤로 가족이 다 뿔뿔이 흩어졌어.</div><div class="example-en">The family fell apart after he passed away.</div></div>
+        <div class="example-pair"><div class="example-kr">이 신발 완전 다 떨어졌어.</div><div class="example-en">These shoes are completely falling apart.</div></div>
+        <div class="example-pair"><div class="example-kr">그 협상 결국 결렬됐어.</div><div class="example-en">The negotiations ended up falling apart.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">break down</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— (기계가) 고장나다 / (관계·소통이) 무너지다</span><span class="alt-ex">My laptop broke down again. &nbsp;/&nbsp; Communication broke down completely.</span></div>
+        <div class="alt-item"><span class="alt-expr">fall through</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— (계획·거래가) 무산되다</span><span class="alt-ex">The deal fell through.</span></div>
+        <div class="alt-item"><span class="alt-expr">crumble</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— (서서히) 무너지다, 허물어지다</span><span class="alt-ex">Their trust crumbled over time.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever had a plan or situation that just fell apart?</div>
+        <div class="sp-answer">
+          → I had a trip planned and it completely fell apart last minute.<br>
+          → A group project at work fell apart because no one communicated.<br>
+          → My morning routine has been falling apart lately.<br>
+          → We had a great plan but it fell apart when things got busy.<br>
+          → A friendship I had fell apart slowly over a few years.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"It's falling apart. I never get hot water."</em><br>
+            해석: 다 망가져가고 있어. 온수도 안 나와.<br>
+            → 물리적인 노후화를 묘사. 이 의미가 비유로 확장돼 관계·상황 묘사에도 동일하게 사용됨.
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 & 문화적 맥락</h4>
+            "I'm falling apart" = 나 감정적으로 무너지고 있어 (스트레스·슬픔 극심할 때)<br>
+            "fall apart at the seams" = 완전히 뜯어지듯 무너지다 (강조 표현)
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 물리적·비유적 맥락 모두 매우 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #7: develop ── -->
+    <div id="expr7" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">7</div>
+        <div>
+          <div class="expr-title">develop</div>
+          <div class="expr-kr">(문제·버릇·감정이) 생기다, 생겨나다 / (상황이) 전개되다</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>develop</strong> — (문제·습관·감정이) 서서히 생기다, 나타나다<br>
+          <em style="color:var(--gray);font-size:13px;">학습자가 아는 "발전하다/개발하다"가 아닌 의미!</em>
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">걔 요즘 술을 좀 너무 마시는 것 같아.</div><div class="example-en">I think he's developing a drinking problem.</div></div>
+        <div class="example-pair"><div class="example-kr">나 요즘 야식 습관이 생긴 것 같아.</div><div class="example-en">I think I'm developing a habit of late-night snacking.</div></div>
+        <div class="example-pair"><div class="example-kr">걔 무대 공포증이 생긴 것 같아.</div><div class="example-en">She seems to be developing stage fright.</div></div>
+        <div class="example-pair"><div class="example-kr">상황이 어떻게 흘러가는지 지켜보자.</div><div class="example-en">Let's see how things develop.</div></div>
+        <div class="example-pair"><div class="example-kr">나 요즘 커피에 중독되는 것 같아.</div><div class="example-en">I think I'm developing a caffeine dependency.</div></div>
+        <div class="example-pair"><div class="example-kr">둘 사이에 뭔가 생기는 것 같던데.</div><div class="example-en">It looked like something was developing between them.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">pick up (a habit)</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— (습관을) 들이다, 배우다 (더 구어적)</span><span class="alt-ex">I picked up a bad habit of checking my phone constantly.</span></div>
+        <div class="alt-item"><span class="alt-expr">get into ~</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— ~에 빠지다, 습관이 생기다</span><span class="alt-ex">I've been getting into running lately.</span></div>
+        <div class="alt-item"><span class="alt-expr">start to ~</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— ~하기 시작하다 (가장 기본적 대체)</span><span class="alt-ex">He started to drink more after the breakup.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever developed a new habit — good or bad — recently?</div>
+        <div class="sp-answer">
+          → I've been developing a habit of going to bed too late.<br>
+          → I developed a love of cooking during the pandemic.<br>
+          → I think I'm developing a dependency on coffee.<br>
+          → I developed a habit of journaling and I actually like it.<br>
+          → I've slowly developed a fear of flying as I get older.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"I think Logan is developing a drinking problem."</em><br>
+            해석: 로건이 알코올 의존 문제가 생기고 있는 것 같아.<br>
+            → "문제·습관이 서서히 생겨나고 있다"는 의미. "발전하다"가 아님을 주목.
+          </div>
+          <div class="note-section note-highlight">
+            <h4>핵심 교정 포인트</h4>
+            한국 학습자는 "develop = 발전하다/개발하다"만 기억하는 경우가 많음 → 이 의미 교정이 수업 핵심.<br>
+            <strong>"develop a problem/habit/feeling"</strong> 패턴으로 묶어서 가르치면 효과적.
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스</h4>
+            "developing" 진행형으로 쓰면 "서서히 생겨나고 있는 중"의 뉘앙스가 살아남.
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 의료·심리·일상 모두에서 매우 자주 사용 — develop symptoms / a habit / feelings for someone
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #8: good for ~ ── -->
+    <div id="expr8" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">8</div>
+        <div>
+          <div class="expr-title">good for ~ &nbsp;&nbsp; (진심 vs 비꼼)</div>
+          <div class="expr-kr">잘됐네 (진심 축하) ↗ &nbsp;/&nbsp; 그래서 뭐? (비꼼·시큰둥) ↘</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>Good for him / her / you / them</strong><br>
+          진심 (↗ 올리면): 정말 잘됐다, 축하해<br>
+          비꼼 (↘ 내리면): 그래서 뭐, 걔는 좋겠네 (무관심·약간 시기)
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div style="margin-bottom:10px; font-size:12px; color:var(--teal-dark); font-weight:bold; letter-spacing:1px;">▸ 진심 — 진짜 잘됐다</div>
+        <div class="example-pair"><div class="example-kr">걔 승진했대. — 진짜 잘됐다!</div><div class="example-en">She got promoted. — Good for her! ↗</div></div>
+        <div class="example-pair"><div class="example-kr">남자친구 생겼대. — 와, 잘됐네!</div><div class="example-en">She's got a boyfriend. — Good for her! ↗</div></div>
+        <div style="margin:14px 0 10px; font-size:12px; color:#c0392b; font-weight:bold; letter-spacing:1px;">▸ 비꼼 / 시큰둥</div>
+        <div class="example-pair"><div class="example-kr">걔 복권 당첨됐대. — 그래, 걔는 좋겠네.</div><div class="example-en">She won the lottery. — Good for her. ↘ (flat tone)</div></div>
+        <div class="example-pair"><div class="example-kr">걔 엄청 잘 산대. — 그래, 걘 그렇겠지.</div><div class="example-en">She's doing really well. — Good for her. ↘</div></div>
+      </div>
+
+      <div class="reactions-block">
+        <div class="block-label">💭 Typical Reactions</div>
+        <div class="reaction-item">
+          <strong>"Good for you!" (진심) 들었을 때:</strong><br>
+          → Thanks! I'm really happy about it.<br>
+          → I know, right? I can't believe it worked out.<br>
+          → Haha, I'll take it.<br><br>
+          <strong>"Good for her." (flat) 들었을 때:</strong><br>
+          → Yeah... she's always had it easy.
+        </div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Think of someone you know who recently got good news — what happened?</div>
+        <div class="sp-answer">
+          → My friend got a new job. Good for her — she worked really hard for it.<br>
+          → My coworker got a promotion. Good for him.<br>
+          → My sister got into her dream school. Good for her!<br>
+          → Someone I know got engaged. Good for them — they've been together forever.<br>
+          → My neighbor got a new car. Good for him, I guess.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>Lucy: "Good for him." / John: "Is it?"</em><br>
+            → Lucy는 표면상 축하 반응이지만 어조가 flat → 시큰둥함. John의 "Is it?"은 이를 꿰뚫어보고 반박.
+          </div>
+          <div class="note-section note-highlight">
+            <h4>억양이 전부!</h4>
+            감탄부호(!) + 올리면 → 진심 "Good for her!"<br>
+            마침표(.) + 내리면 → 비꼼 "Good for her."<br><br>
+            "Good for you!" 를 비꼼으로 쓰면 매우 passive-aggressive하게 들릴 수 있으니 주의.
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 추가</h4>
+            "Is it?" = 진짜 그게 잘된 건지 모르겠는데? (되묻기 반박) — 영어에서 단음절 반박으로 매우 자주 쓰임.
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 두 뉘앙스 모두 일상에서 매우 자주 사용 — <strong>억양 교육이 핵심</strong>
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #9: couldn't do better ── -->
+    <div id="expr9" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">9</div>
+        <div>
+          <div class="expr-title">couldn't do better</div>
+          <div class="expr-kr">이보다 더 잘할 수 없다 / 이게 최선이다</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>couldn't do better</strong> — 이것보다 더 나은 건 없다, 최선이다<br>
+          <strong>couldn't have done better</strong> — 그 상황에서 최선이었다 (과거)<br>
+          <strong>He/She couldn't do better</strong> — 그 사람보다 더 나은 상대 없다
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">넌 그 상황에서 최선을 다했어.</div><div class="example-en">You couldn't have done better.</div></div>
+        <div class="example-pair"><div class="example-kr">이 가격에 이 퀄리티면 이게 최선이지.</div><div class="example-en">At this price, you really couldn't do better.</div></div>
+        <div class="example-pair"><div class="example-kr">걔 그 남자랑 잘 어울려. 더 잘 만날 수 없을 것 같아.</div><div class="example-en">She's great with him — she couldn't do better.</div></div>
+        <div class="example-pair"><div class="example-kr">그 결정 잘한 거야. 더 좋은 선택은 없었어.</div><div class="example-en">That was the right call — you couldn't have done better.</div></div>
+        <div class="example-pair"><div class="example-kr">이 상황에서 걔 완전 딱이야.</div><div class="example-en">For this role, he couldn't do better.</div></div>
+        <div class="example-pair"><div class="example-kr">솔직히 그 남자가 걔한테 딱이야. 더 좋은 사람 없어.</div><div class="example-en">Honestly, she couldn't do better than him.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">couldn't ask for more</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 이 이상 바랄 게 없다</span><span class="alt-ex">I couldn't ask for a better team.</span></div>
+        <div class="alt-item"><span class="alt-expr">out of someone's league</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— (자기) 수준 밖이다 (너무 좋거나 나쁘거나)</span><span class="alt-ex">Honestly, she's out of his league.</span></div>
+        <div class="alt-item"><span class="alt-expr">(you) did the best you could</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 할 수 있는 만큼 다 했어 (위로)</span><span class="alt-ex">You did the best you could in that situation.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Think of a time you made a decision and it turned out well — how would you describe it?</div>
+        <div class="sp-answer">
+          → I picked a great apartment — I really couldn't have done better.<br>
+          → I found an amazing doctor. I couldn't ask for more.<br>
+          → The team I ended up with was perfect — I couldn't do better.<br>
+          → Looking back, I couldn't have handled it better.<br>
+          → The timing worked out perfectly — I couldn't have done better.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"He's a 5'7" depressed novelist who's never been published. He couldn't do better."</em><br>
+            해석: 키 167cm에 우울한 미발표 소설가잖아. 그 사람으로선 최선이지.<br>
+            → Lucy의 냉소적인 현실 인식. "그 사람 수준에선 더 잘할 수 없다" = TikTok 여자친구가 최선이라는 뜻.
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 & 문화적 맥락</h4>
+            진심 격려로도, 이 대사처럼 냉소로도 쓰임. 맥락이 전부.<br>
+            "couldn't ask for better/more"가 더 따뜻하고 긍정적인 뉘앙스.
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트</h4>
+            could/couldn't 과거형이 "가정·추측" 뉘앙스를 만들어냄 — 한국 학습자에게 설명 필요.
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 위로·칭찬·냉소 모두에서 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #10: smells + 형용사 ── -->
+    <div id="expr10" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">10</div>
+        <div>
+          <div class="expr-title">smells + 형용사 &nbsp;&nbsp; (감각동사 패턴)</div>
+          <div class="expr-kr">smell + 형용사: ~한 냄새가 나다 / smell like + 명사: ~냄새가 나다</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>smell + 형용사</strong> — ~한 냄새가 나다 (형용사가 주어를 묘사)<br>
+          <strong>smell like + 명사</strong> — ~의 냄새가 나다<br>
+          <em style="color:var(--gray);font-size:13px;">※ 감각동사 뒤에는 형용사 (부사 아님!) — It smells good ✓ / It smells well ✗</em>
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">여기서 뭔가 좋은 냄새 나는데.</div><div class="example-en">Something smells good in here.</div></div>
+        <div class="example-pair"><div class="example-kr">이거 이상한 냄새 나.</div><div class="example-en">This smells weird.</div></div>
+        <div class="example-pair"><div class="example-kr">똑같은 냄새가 나. (같은 냄새야.)</div><div class="example-en">It smells the same.</div></div>
+        <div class="example-pair"><div class="example-kr">밖에서 담배 냄새 나는데.</div><div class="example-en">It smells like cigarettes outside.</div></div>
+        <div class="example-pair"><div class="example-kr">꽃 냄새 같은데.</div><div class="example-en">It smells like flowers.</div></div>
+        <div class="example-pair"><div class="example-kr">이 방 퀴퀴한 냄새 나.</div><div class="example-en">This room smells musty.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 감각동사 확장 패턴</div>
+        <div class="alt-item"><span class="alt-expr">taste + 형용사</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— ~한 맛이 나다</span><span class="alt-ex">This tastes amazing. &nbsp;/&nbsp; It tastes weird.</span></div>
+        <div class="alt-item"><span class="alt-expr">sound + 형용사</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— ~하게 들리다</span><span class="alt-ex">That sounds great! &nbsp;/&nbsp; That sounds off to me.</span></div>
+        <div class="alt-item"><span class="alt-expr">feel + 형용사</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— ~한 느낌이 나다</span><span class="alt-ex">This feels wrong. &nbsp;/&nbsp; It feels soft.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Describe a place, food, or memory using "smells like" or "smells + adjective."</div>
+        <div class="sp-answer">
+          → My grandmother's house smells like cinnamon and old books.<br>
+          → This coffee shop smells amazing.<br>
+          → That restaurant smells weird — I don't think I want to eat there.<br>
+          → Every time it rains, outside smells so fresh.<br>
+          → My old car smelled like fast food. I kind of miss it.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"It smells the same."</em><br>
+            해석: 냄새가 똑같아.<br>
+            → Lucy가 John의 차에서 옛 기억을 떠올리며. "the same"은 형용사로 smell 뒤에 자연스럽게 사용.
+          </div>
+          <div class="note-section note-highlight">
+            <h4>핵심 문법 포인트 — 형용사 vs 부사</h4>
+            감각동사(smell / taste / sound / feel / look) 뒤에는 <strong>형용사</strong>!<br>
+            ✓ It smells good. &nbsp;&nbsp; ✗ It smells well.<br>
+            ✓ It tastes amazing. &nbsp;&nbsp; ✗ It tastes amazingly.
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 & 문화적 맥락</h4>
+            "smell like + 명사"와 "smell + 형용사" 구분 자주 혼동됨:<br>
+            It smells like coffee. (커피 냄새가 나.) vs It smells fresh. (신선한 냄새가 나.)<br><br>
+            자주 쓰이는 smell 형용사: good, bad, weird, amazing, musty, fresh, sweet, strange, familiar, the same
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 일상에서 매우 자주 사용 — 음식, 공간, 사람, 기억 묘사 모두에 활용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Wrapup Section ── -->
+    <div id="wrapup" class="wrapup-section">
+      <div class="wrapup-header">📌 &nbsp;한눈에 정리 — Materialists Set 8 &nbsp;/&nbsp; 6월 Day 1</div>
+
+      <div class="wrapup-item"><span class="wrapup-num">1.</span><span class="wrapup-expr">recruit / recruitment</span><span class="wrapup-kr">— 스카우트하다, 영입하다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">2.</span><span class="wrapup-expr">work</span><span class="wrapup-kr">— (방법·전략이) 통하다, 효과가 있다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">3.</span><span class="wrapup-expr">I'm someone who ~ / He's someone who ~</span><span class="wrapup-kr">— 나는 / 걔는 ~하는 사람이야</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">4.</span><span class="wrapup-expr">mind-numbingly / absurdly / achingly</span><span class="wrapup-kr">— 어이없을 정도로 / 터무니없이 / 사무치게</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">5.</span><span class="wrapup-expr">non-negotiable / nice-to-have</span><span class="wrapup-kr">— 절대 조건 / 있으면 좋은 것</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">6.</span><span class="wrapup-expr">fall apart</span><span class="wrapup-kr">— (물건이) 망가지다 / (상황이) 무너지다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">7.</span><span class="wrapup-expr">develop</span><span class="wrapup-kr">— (문제·습관이) 생기다, 나타나다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">8.</span><span class="wrapup-expr">good for ~</span><span class="wrapup-kr">— 잘됐네 (진심↗ vs 비꼼↘)</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">9.</span><span class="wrapup-expr">couldn't do better</span><span class="wrapup-kr">— 이보다 더 잘할 수 없다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">10.</span><span class="wrapup-expr">smells + 형용사</span><span class="wrapup-kr">— ~한 냄새가 나다 (감각동사 패턴)</span></div>
+
+      <div class="wrapup-grammar">
+        <div class="wrapup-grammar-item">
+          <span class="wrapup-grammar-tag">Grammar G</span>
+          <span style="color:#ccc;"><em>what kind of</em> vs <em>what kinds of</em> — 헷갈리면 "what kind of"로 통일</span>
+        </div>
+      </div>
+    </div>
+
+
+
+  <!-- ══════════════════════════════════════════════════════
+       DAY 2 — Materialists Set 9
+       ══════════════════════════════════════════════════════ -->
+
+  <div class="day-banner" id="day2">📖 &nbsp;Day 2 — Materialists Set 9 &nbsp;/&nbsp; 6월</div>
+
+  <div class="content">
+
+    <!-- ── Expression #1 ── -->
+    <div id="d2-expr1" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">1</div>
+        <div>
+          <div class="expr-title">That's the cheapest we'll ever get</div>
+          <div class="expr-kr">이게 우리가 구할 수 있는 가장 싼 거야 &nbsp;/&nbsp; 이것보다 더 싼 건 없어</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>That's the cheapest we'll ever get</strong> — 최상급 + will ever = 미래 가능성 전체를 포함한 절대 강조<br>
+          "이보다 더 저렴한 건 앞으로도 없을 거야"의 뉘앙스
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">이게 우리가 찾을 수 있는 가장 싼 항공권이야.</div><div class="example-en">That's the cheapest flight we'll ever find.</div></div>
+        <div class="example-pair"><div class="example-kr">이 가격이 이 동네에서 나올 수 있는 최저가야.</div><div class="example-en">That's the cheapest rent we'll ever get in this neighborhood.</div></div>
+        <div class="example-pair"><div class="example-kr">지금이 제일 저렴할 때야. 기다려봤자 올라.</div><div class="example-en">This is the cheapest it'll ever be. It's only going up from here.</div></div>
+        <div class="example-pair"><div class="example-kr">이 정도 퀄리티에 이 가격이면 이게 최선이야.</div><div class="example-en">For this quality, that's the cheapest you'll ever get.</div></div>
+        <div class="example-pair"><div class="example-kr">지금 이 시즌에 이 가격이 나올 리 없어.</div><div class="example-en">That's the cheapest we'll ever see this time of year.</div></div>
+        <div class="example-pair"><div class="example-kr">이보다 더 싼 데는 없어. 그냥 여기로 하자.</div><div class="example-en">That's the cheapest we'll ever get — let's just go with it.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">That's the best deal we'll get</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 이게 우리가 구할 수 있는 최선의 조건이야</span><span class="alt-ex">That's the best deal we'll get today.</span></div>
+        <div class="alt-item"><span class="alt-expr">You won't find it cheaper than this</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 이것보다 더 싼 건 없을 거야</span><span class="alt-ex">Trust me, you won't find it cheaper than this.</span></div>
+        <div class="alt-item"><span class="alt-expr">It doesn't get better than this</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 이보다 더 좋을 순 없어 (가격·조건 전반)</span><span class="alt-ex">It doesn't get better than this at this price.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever told someone — just go with it, this is the cheapest we'll ever get?</div>
+        <div class="sp-answer">
+          → Yeah, I told my friend that was the cheapest flight we'd ever get, so we just booked it.<br>
+          → I told my family that apartment was the cheapest we'd ever find in that area.<br>
+          → I said that's the best deal we'll get and finally got them to agree.<br>
+          → My partner kept hesitating, but I said it doesn't get better than this.<br>
+          → I just said — this is the cheapest we'll ever see, let's stop waiting.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"That's the cheapest we'll ever get."</em><br>
+            → Lucy가 주차 요금을 내자고 설득하며 이보다 저렴한 건 없다고 강조하는 장면.
+          </div>
+          <div class="note-section">
+            <h4>확장표현</h4>
+            "That's the best deal we'll get." — 가격 외 조건·제안에도 사용 가능<br>
+            "It's only going up from here." — 지금이 바닥이야, 이제 오를 일만 남았어<br>
+            "You'll never find it cheaper." — 이보다 싼 건 못 찾을 거야
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트</h4>
+            최상급 + will ever + 동사원형 = 미래 가능성 전체를 포함한 절대 강조<br>
+            ✓ That's the best offer you'll ever get.<br>
+            ✗ That's the cheapest we'll ever <u>got</u>. (get 원형 유지)
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 쇼핑·여행·부동산 협상 모두에서 활용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #2 ── -->
+    <div id="d2-expr2" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">2</div>
+        <div>
+          <div class="expr-title">It's been + 시간</div>
+          <div class="expr-kr">(시간)이 됐어 &nbsp;/&nbsp; (시간)이나 지났어</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>It's been + 시간</strong> — It has been ~의 축약형. 구어에서 거의 항상 <em>It's been</em>으로 사용.<br>
+          단순 시간 진술이지만 맥락에 따라 <strong>불만·설득·그리움·놀라움</strong> 모두 표현 가능
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">20분이나 됐잖아.</div><div class="example-en">It's been 20 minutes.</div></div>
+        <div class="example-pair"><div class="example-kr">벌써 세 시간째야. 나 배고파 죽겠어.</div><div class="example-en">It's been three hours. I'm starving.</div></div>
+        <div class="example-pair"><div class="example-kr">우리 마지막으로 본 지 거의 일 년이 됐네.</div><div class="example-en">It's been almost a year since we last saw each other.</div></div>
+        <div class="example-pair"><div class="example-kr">걔한테 문자 보낸 지 이틀 됐는데 아직 답장이 없어.</div><div class="example-en">It's been two days and he still hasn't texted back.</div></div>
+        <div class="example-pair"><div class="example-kr">여기서 기다린 지 30분 넘었어.</div><div class="example-en">It's been over 30 minutes since I got here.</div></div>
+        <div class="example-pair"><div class="example-kr">우리 사귄 지 벌써 5년이 됐어.</div><div class="example-en">It's been five years since we started dating.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">I've been ~ing for + 시간</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— (시간) 동안 ~하고 있어</span><span class="alt-ex">I've been waiting for 20 minutes!</span></div>
+        <div class="alt-item"><span class="alt-expr">It's already been ~</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 벌써 ~이나 됐어 (놀라움 강조)</span><span class="alt-ex">It's already been two hours.</span></div>
+        <div class="alt-item"><span class="alt-expr">How long has it been?</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 얼마나 됐어?</span><span class="alt-ex">How long has it been since you moved?</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Think of something you've been waiting for or doing for a while — how long has it been?</div>
+        <div class="sp-answer">
+          → It's been two weeks since I started this new routine and it's actually working.<br>
+          → It's been almost a year since I changed jobs.<br>
+          → It's been 30 minutes and my food still hasn't arrived — I'm getting annoyed.<br>
+          → It's been three years since I last traveled and I really miss it.<br>
+          → It's been over an hour since the meeting started. I need a break.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"John, it's been 20 minutes."</em><br>
+            → 주차 자리를 찾아 헤맨 시간을 근거로 결정을 촉구하는 장면. 시간 진술 = 설득 수단.
+          </div>
+          <div class="note-section">
+            <h4>확장표현</h4>
+            "It's been so long!" — 진짜 오랜만이다! (그리움 강조)<br>
+            "Has it really been a year?" — 벌써 일 년이 됐다고? (놀라움)<br>
+            "It's been ages." — 엄청 오래됐어. (ages = 아주 오랜 시간)
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트</h4>
+            It's been ~ <strong>since + 과거시제</strong><br>
+            ✓ It's been three years since I moved.<br>
+            ✗ It's been three years since I <u>have moved</u>. (since 뒤엔 과거시제)
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 매우 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #3 ── -->
+    <div id="d2-expr3" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">3</div>
+        <div>
+          <div class="expr-title">pay vs pay for</div>
+          <div class="expr-kr">pay + 목적어(사람/금액) &nbsp;/&nbsp; pay for + 목적어(물건/서비스)</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>pay + 목적어(사람/금액)</strong> — ~에게 돈을 내다 / ~을 지불하다<br>
+          <strong>pay for + 목적어(물건/서비스)</strong> — ~값을 내다 / ~비용을 내다
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">내가 낼게.</div><div class="example-en">I'll pay for it.</div></div>
+        <div class="example-pair"><div class="example-kr">그 사람한테 돈 아직 안 줬어.</div><div class="example-en">I haven't paid him yet.</div></div>
+        <div class="example-pair"><div class="example-kr">저녁은 내가 살게.</div><div class="example-en">I'll pay for dinner.</div></div>
+        <div class="example-pair"><div class="example-kr">월세 얼마 내?</div><div class="example-en">How much do you pay for rent?</div></div>
+        <div class="example-pair"><div class="example-kr">그 사람이 커피 값을 냈어.</div><div class="example-en">She paid for the coffee.</div></div>
+        <div class="example-pair"><div class="example-kr">나 오늘 못 낼 것 같아. 카드가 없어.</div><div class="example-en">I don't think I can pay today. I don't have my card.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">cover (the bill / the cost)</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— (비용을) 부담하다, 내다</span><span class="alt-ex">I'll cover it. &nbsp;/&nbsp; I'll cover the cost.</span></div>
+        <div class="alt-item"><span class="alt-expr">treat (someone)</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— ~한테 한턱 내다, 사주다</span><span class="alt-ex">I'll treat you. &nbsp;/&nbsp; Let me treat you to lunch.</span></div>
+        <div class="alt-item"><span class="alt-expr">pick up the tab / bill</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— 계산하다</span><span class="alt-ex">I'll pick up the tab.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Think of a time someone paid for something for you, or you paid for someone else.</div>
+        <div class="sp-answer">
+          → My coworker paid for my lunch last week. I want to treat her next time.<br>
+          → My parents always paid for everything when I was young.<br>
+          → I paid for my friend's ticket because she forgot her wallet.<br>
+          → My partner usually pays for dinner but I try to pay for other things.<br>
+          → I paid for the Uber and she paid for the food — it worked out.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            "I'll just pay for it." = 주차 요금(서비스) 값을 낸다.<br>
+            "You're not paying." = 행위 자체 강조.
+          </div>
+          <div class="note-section">
+            <h4>확장표현</h4>
+            "I'll get this one." — 이번엔 내가 낼게. (가장 캐주얼)<br>
+            "It's on me." — 내가 쏠게. (친구끼리 자주 사용)<br>
+            "Split it?" — 나눠 낼까? (더치 제안)
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 & 실수 패턴</h4>
+            ✓ I'll pay <strong>for</strong> the coffee. (서비스/물건 → for 필요)<br>
+            ✗ I'll pay the coffee.<br>
+            ✓ I paid <strong>him</strong>. / I paid <strong>$25</strong>. / I paid <strong>the bill</strong>. (사람/금액/bill → 직접 목적어)<br>
+            <em>예외</em>: pay the bill / the fee / the rent → "요금" 명사 자체가 있을 때 for 생략 가능
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 매우 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #4 ── -->
+    <div id="d2-expr4" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">4</div>
+        <div>
+          <div class="expr-title">extortion / That's extortion</div>
+          <div class="expr-kr">완전 바가지야 &nbsp;/&nbsp; 이건 강도짓이네</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>extortion</strong> — (법적) 강탈, 갈취 → 일상에서: 완전 바가지야 / 이건 강도짓이네<br>
+          법률 용어가 일상 과장 표현으로 전용됨
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">이 가격은 완전 바가지야.</div><div class="example-en">That's extortion.</div></div>
+        <div class="example-pair"><div class="example-kr">$30짜리 칵테일? 완전 강도짓이네.</div><div class="example-en">$30 for a cocktail? That's extortion.</div></div>
+        <div class="example-pair"><div class="example-kr">공항 음식값은 진짜 말이 안 돼.</div><div class="example-en">Airport food prices are basically extortion.</div></div>
+        <div class="example-pair"><div class="example-kr">주차비로 $50? 사기 아니야?</div><div class="example-en">$50 to park? That's extortion.</div></div>
+        <div class="example-pair"><div class="example-kr">이 동네 월세는 진짜 강도 수준이야.</div><div class="example-en">The rent in this neighborhood is extortion.</div></div>
+        <div class="example-pair"><div class="example-kr">배달 수수료가 음식값이랑 거의 똑같아. 완전 바가지야.</div><div class="example-en">The delivery fee is almost as much as the food. That's extortion.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">That's a rip-off</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 완전 바가지야, 사기야 (가장 일상적)</span><span class="alt-ex">$8 for water? That's a total rip-off.</span></div>
+        <div class="alt-item"><span class="alt-expr">That's highway robbery</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 완전 강도짓이야 (과장 구어)</span><span class="alt-ex">$200 for a taxi? That's highway robbery.</span></div>
+        <div class="alt-item"><span class="alt-expr">That's outrageous</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 말도 안 돼, 너무하네</span><span class="alt-ex">That's outrageous. I can't believe they charge that much.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever paid for something that felt like extortion — way too expensive for what you got?</div>
+        <div class="sp-answer">
+          → Concert ticket fees are basically extortion. The service charge alone was $30.<br>
+          → I paid for parking at a hospital once. That was basically extortion.<br>
+          → Hotel minibar prices are always extortion — $10 for a bottle of water.<br>
+          → The popcorn at movie theaters is a total rip-off. I stopped buying it.<br>
+          → Roaming charges when traveling abroad feel like highway robbery.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"That's extortion."</em><br>
+            → 늦은 예약에 $50를 청구하는 레스토랑에 분노하며 사용.
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스</h4>
+            "That's a rip-off"가 더 가볍고 일상적 / "extortion"은 좀 더 드라마틱.<br>
+            ⚠️ 학습자가 직접 쓰기엔 <strong>rip-off</strong> 권장
+          </div>
+          <div class="note-section">
+            <h4>발음 포인트</h4>
+            extortion [ɪkˈstɔːrʃən] — 강세 앞에 (ex-TOR-tion)
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ⚠️ 과장 표현으로 특정 상황에서 사용 — rip-off가 더 일상적
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Grammar G1 ── -->
+    <div id="d2-grammar1" class="grammar-card">
+      <div class="grammar-header">
+        <span class="grammar-tag">Grammar [G1]</span>
+        <span class="grammar-title">Why would you ~?</span>
+      </div>
+
+      <div class="grammar-content">
+        <div class="grammar-rule">
+          <div class="rule-head">Why would you ~? — 왜 ~하는 거야? (의아함·불만)</div>
+          원문: <em style="color:var(--pink);">"Why would you make a reservation at such a criminal place?"</em>
+        </div>
+
+        <div class="grammar-rule">
+          <div class="rule-head">Why would you ~? vs Why did you ~? 차이</div>
+          <span class="g-example">Why would you make a reservation there?</span> &nbsp;<span class="g-kr">→ 그 행동이 이해가 안 된다는 의아함·불만 포함</span><br>
+          <span class="g-example">Why did you make a reservation there?</span> &nbsp;<span class="g-kr">→ 과거에 한 행동의 이유를 물음 (중립적)</span>
+        </div>
+
+        <div class="grammar-rule" style="background:var(--pink-pale); border-left-color:var(--pink);">
+          <div class="rule-head" style="color:var(--pink);">연습 문장</div>
+          <span class="g-example">Why would you tell him that?</span> &nbsp;<span class="g-kr">(왜 그 사람한테 그 말을 해?)</span><br>
+          <span class="g-example">Why would I lie to you?</span> &nbsp;<span class="g-kr">(내가 왜 너한테 거짓말을 해?)</span>
+        </div>
+
+        <details class="grammar-notes">
+          <summary>강사노트 열기 / 닫기</summary>
+          <div class="notes-content">
+            <div class="note-section note-highlight">
+              <h4>수업 핵심 포인트</h4>
+              단순 이유 질문이 아닌 <strong>"말이 안 된다"는 감정이 실린 표현</strong>.<br>
+              "Why did you ~?"와의 차이 — 감정 뉘앙스 교육이 핵심.
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+
+    <!-- ── Expression #5 ── -->
+    <div id="d2-expr5" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">5</div>
+        <div>
+          <div class="expr-title">agree to vs agree on</div>
+          <div class="expr-kr">agree to + 계획/제안 (수락) &nbsp;/&nbsp; agree on + 주제/결정 (합의)</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>agree to + 계획/제안</strong> — ~을 수락하다, ~하기로 하다 (상대방 제안에 동의)<br>
+          <strong>agree on + 주제/결정</strong> — ~에 합의하다 (함께 결정)
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">우리 기념일엔 좋은 레스토랑 가기로 했잖아.</div><div class="example-en">We agreed to go to nice restaurants on our anniversary.</div></div>
+        <div class="example-pair"><div class="example-kr">우리 가격은 합의했는데 날짜를 못 정했어.</div><div class="example-en">We agreed on the price but couldn't agree on the date.</div></div>
+        <div class="example-pair"><div class="example-kr">걔가 내 제안을 수락했어.</div><div class="example-en">She agreed to my proposal.</div></div>
+        <div class="example-pair"><div class="example-kr">우리 둘 다 이 계획으로 합의했어.</div><div class="example-en">We both agreed on this plan.</div></div>
+        <div class="example-pair"><div class="example-kr">그는 만나자는 데는 동의했는데 장소를 못 정하고 있어.</div><div class="example-en">He agreed to meet but we haven't agreed on where yet.</div></div>
+        <div class="example-pair"><div class="example-kr">우리 팀이 드디어 마감일에 합의했어.</div><div class="example-en">Our team finally agreed on a deadline.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">be on the same page</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 서로 같은 생각이다, 의견이 맞다</span><span class="alt-ex">Are we on the same page about this?</span></div>
+        <div class="alt-item"><span class="alt-expr">come to an agreement</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 합의에 이르다</span><span class="alt-ex">We finally came to an agreement.</span></div>
+        <div class="alt-item"><span class="alt-expr">settle on ~</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— ~로 결정하다 (여러 선택지 중 하나로)</span><span class="alt-ex">We settled on Thursday for the meeting.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever had a hard time agreeing on something with someone — where did you end up?</div>
+        <div class="sp-answer">
+          → My family couldn't agree on where to go for vacation. We finally settled on Jeju.<br>
+          → My coworker and I agreed to split the project but couldn't agree on the deadline.<br>
+          → We agreed to have dinner together but couldn't agree on the restaurant.<br>
+          → My partner and I finally agreed on a neighborhood to move to.<br>
+          → We agreed to work together but it took a week to agree on the details.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"We agreed to go to nice restaurants on our anniversary."</em><br>
+            → agree to + 동사원형, 함께 한 약속·계획을 상기시키는 맥락.
+          </div>
+          <div class="note-section">
+            <h4>세 가지 agree 정리</h4>
+            agree <strong>to</strong> + 동사원형/명사: 제안 수락 (agree to his plan)<br>
+            agree <strong>on</strong> + 명사: 함께 합의 (agree on a plan)<br>
+            agree <strong>with</strong> + 사람/의견: 의견 찬성 (agree with you)
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트</h4>
+            agree to 뒤엔 동사원형:<br>
+            ✓ We agreed to meet.<br>
+            ✗ We agreed to <u>meeting</u>.
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 매우 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #6 ── -->
+    <div id="d2-expr6" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">6</div>
+        <div>
+          <div class="expr-title">charge (someone) + 금액</div>
+          <div class="expr-kr">~에게 ~를 청구하다 &nbsp;/&nbsp; ~을 받다</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>charge (someone) + 금액</strong> — 누군가에게 요금을 청구하는 행위를 강조<br>
+          <em>charge vs cost</em>: charge = 누군가가 부과하는 행위 / cost = 단순히 가격이 얼마
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">커플이면 50달러를 청구한대, 조금 늦으면.</div><div class="example-en">They charge you 50 bucks if you're a couple minutes late.</div></div>
+        <div class="example-pair"><div class="example-kr">여기 주차비 얼마 받아?</div><div class="example-en">How much do they charge for parking here?</div></div>
+        <div class="example-pair"><div class="example-kr">수수료를 따로 청구하는 거야?</div><div class="example-en">Are they charging extra for the service fee?</div></div>
+        <div class="example-pair"><div class="example-kr">걔네 배달비를 5달러 받아.</div><div class="example-en">They charge $5 for delivery.</div></div>
+        <div class="example-pair"><div class="example-kr">내 카드에 이상한 금액이 청구됐어.</div><div class="example-en">They charged my card a weird amount.</div></div>
+        <div class="example-pair"><div class="example-kr">그 병원 진찰비를 엄청 청구하더라.</div><div class="example-en">That clinic charges a lot for a basic appointment.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">cost (someone) + 금액</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— ~에게 ~의 비용이 들다</span><span class="alt-ex">It cost me $30. &nbsp;/&nbsp; How much did it cost?</span></div>
+        <div class="alt-item"><span class="alt-expr">bill (someone) for ~</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— ~에 대한 청구서를 보내다 (격식체)</span><span class="alt-ex">They billed me for the full amount.</span></div>
+        <div class="alt-item"><span class="alt-expr">fee</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 수수료, 요금 (charge의 명사형처럼 쓰임)</span><span class="alt-ex">There's a $10 cancellation fee.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever been charged something that felt way too much — what was it for?</div>
+        <div class="sp-answer">
+          → A restaurant charged me a service fee I didn't even know about.<br>
+          → They charged me for a bag at the checkout and I wasn't expecting it.<br>
+          → My phone company charged me extra for going over my data.<br>
+          → A hotel charged me a resort fee on top of the room price — I was so annoyed.<br>
+          → They charged $15 just to print a boarding pass. I couldn't believe it.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"charge you 50 bucks if you're a couple minutes late"</em><br>
+            → 레스토랑이 늦은 도착에 추가 요금 부과하는 것에 분노.
+          </div>
+          <div class="note-section">
+            <h4>charge vs cost 핵심 차이</h4>
+            charge = 누군가가 부과하는 행위 → They charged me $50.<br>
+            cost = 단순히 가격이 얼마 → It cost $50.
+          </div>
+          <div class="note-section">
+            <h4>확장표현</h4>
+            "charge my card" — 카드에 청구하다 (일상에서 매우 자주 사용)<br>
+            "overcharge (someone)" — 바가지 씌우다, 과다 청구하다<br>
+            "There's a fee for ~" — ~에 수수료가 있어요
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 매우 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Grammar G2 ── -->
+    <div id="d2-grammar2" class="grammar-card">
+      <div class="grammar-header">
+        <span class="grammar-tag">Grammar [G2]</span>
+        <span class="grammar-title">Do you know how + 형용사 + it is + to V?</span>
+      </div>
+
+      <div class="grammar-content">
+        <div class="grammar-rule">
+          <div class="rule-head">Do you know how + 형용사 + it is to V? — ~하는 게 얼마나 [형용사]한지 알아?</div>
+          원문: <em style="color:var(--pink);">"Do you know how hard it is to make you happy?"</em>
+        </div>
+
+        <div class="grammar-rule" style="background:var(--pink-pale); border-left-color:var(--pink);">
+          <div class="rule-head" style="color:var(--pink);">연습 문장</div>
+          <span class="g-example">Do you know how hard it is to find parking here?</span> &nbsp;<span class="g-kr">(여기서 주차 자리 찾는 게 얼마나 힘든지 알아?)</span><br>
+          <span class="g-example">Do you know how expensive it is to live in New York?</span> &nbsp;<span class="g-kr">(뉴욕 생활이 얼마나 비싼지 알아?)</span><br>
+          <span class="g-example">Do you know how long it takes to get there?</span> &nbsp;<span class="g-kr">(거기까지 가는 데 얼마나 걸리는지 알아?)</span>
+        </div>
+
+        <div class="grammar-tip">
+          ⚠️ <strong>학습자 자주 하는 실수: "it is" 빠뜨리기</strong><br>
+          ✗ Do you know how hard to make you happy?<br>
+          ✓ Do you know how hard <strong>it is</strong> to make you happy?
+        </div>
+
+        <details class="grammar-notes">
+          <summary>강사노트 열기 / 닫기</summary>
+          <div class="notes-content">
+            <div class="note-section note-highlight">
+              <h4>수업 핵심 포인트</h4>
+              진짜 질문보다 <strong>수사의문문(rhetorical question)</strong>으로 더 많이 씀 — "생각해봐 / 알잖아" 뉘앙스.<br>
+              "You have no idea how hard it is to ~"와 비슷한 맥락.
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+
+    <!-- ── Expression #7 ── -->
+    <div id="d2-expr7" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">7</div>
+        <div>
+          <div class="expr-title">make me feel like ~</div>
+          <div class="expr-kr">나를 ~처럼 느끼게 하다 &nbsp;/&nbsp; ~같은 기분이 들게 하다</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>make me feel like ~</strong> — 사역동사 + 감정 표현의 핵심 패턴<br>
+          make + 사람 + feel like + 명사구/절 (to 붙이지 않음)
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">이러면 나 부모님 같은 기분이야.</div><div class="example-en">It makes me feel like my parents.</div></div>
+        <div class="example-pair"><div class="example-kr">걔가 나를 바보 같은 기분이 들게 해.</div><div class="example-en">He makes me feel like an idiot.</div></div>
+        <div class="example-pair"><div class="example-kr">이 노래 들으면 영화 주인공이 된 것 같아.</div><div class="example-en">This song makes me feel like I'm in a movie.</div></div>
+        <div class="example-pair"><div class="example-kr">그 말이 나를 너무 작아지는 것 같은 기분이 들게 해.</div><div class="example-en">That comment makes me feel like I'm not good enough.</div></div>
+        <div class="example-pair"><div class="example-kr">걔랑 있으면 진짜 나 자신이 된 것 같아.</div><div class="example-en">She makes me feel like myself.</div></div>
+        <div class="example-pair"><div class="example-kr">이 옷 입으면 자신감 생기는 것 같아.</div><div class="example-en">This outfit makes me feel like I can do anything.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">make me feel + 형용사</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 나를 ~하게 느끼게 하다</span><span class="alt-ex">You make me feel safe. &nbsp;/&nbsp; That makes me feel awful.</span></div>
+        <div class="alt-item"><span class="alt-expr">remind me of ~</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— ~를 생각나게 하다</span><span class="alt-ex">That reminds me of my childhood.</span></div>
+        <div class="alt-item"><span class="alt-expr">feel like ~</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— ~같은 기분이다 (주어가 나일 때)</span><span class="alt-ex">I feel like a stranger here.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Is there something that makes you feel like a totally different person — a song, a place, or a memory?</div>
+        <div class="sp-answer">
+          → Listening to old songs makes me feel like I'm back in high school.<br>
+          → Going back to my hometown makes me feel like a kid again.<br>
+          → Working out makes me feel like a completely different person.<br>
+          → My best friend makes me feel like I can say anything.<br>
+          → Wearing something I really like makes me feel like the best version of myself.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"It makes me feel like my parents."</em><br>
+            → 돈 문제로 싸우는 상황이 부모님 관계를 떠올리게 한다는 감정 표현.
+          </div>
+          <div class="note-section">
+            <h4>확장표현</h4>
+            "make me feel like myself" — 나 자신으로 돌아온 것 같아 (중요한 관용 표현)<br>
+            "make me feel like a kid" — 어린아이가 된 것 같아<br>
+            "make me feel + 형용사" — You make me feel happy / safe / loved
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트 (사역동사)</h4>
+            make + 사람 + feel like ~ (사역동사 — to 붙이지 않음)<br>
+            ✓ You make me feel happy.<br>
+            ✗ You make me <u>to feel</u> happy.
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 감정·관계 묘사의 핵심 패턴
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #8 ── -->
+    <div id="d2-expr8" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">8</div>
+        <div>
+          <div class="expr-title">be broke</div>
+          <div class="expr-kr">돈이 없다, 빈털터리다 (지금 당장 돈이 없는 상태)</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>be broke</strong> — 일시적으로 돈이 없는 상태. "I don't have money"보다 훨씬 자연스러운 표현<br>
+          <em>broke vs poor</em>: broke = 일시적 돈 없음 / poor = 장기적 가난
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">나 지금 완전 거지야. 이번 달 빠듯해.</div><div class="example-en">I'm broke right now. This month has been tough.</div></div>
+        <div class="example-pair"><div class="example-kr">그 관계가 깨진 건 사랑이 없어서가 아니라 돈이 없어서야.</div><div class="example-en">It's not because we're not in love. It's because we're broke.</div></div>
+        <div class="example-pair"><div class="example-kr">나 이번 주말엔 못 나가. 완전 거지야.</div><div class="example-en">I can't go out this weekend. I'm totally broke.</div></div>
+        <div class="example-pair"><div class="example-kr">대학 다닐 때 항상 돈이 없었어.</div><div class="example-en">I was always broke in college.</div></div>
+        <div class="example-pair"><div class="example-kr">지금 당장 돈이 없어서 다음 달까지 기다려야 해.</div><div class="example-en">I'm broke right now, so I'll have to wait until next month.</div></div>
+        <div class="example-pair"><div class="example-kr">요즘 다들 빠듯하잖아. 나만 그런 게 아니야.</div><div class="example-en">Everyone's a little broke these days. It's not just me.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">I'm tight on money / cash</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 돈이 빠듯해 (broke보다 덜 극단적)</span><span class="alt-ex">I'm a little tight on cash this week.</span></div>
+        <div class="alt-item"><span class="alt-expr">I'm short on cash</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 현금이 부족해 (일시적인 부족)</span><span class="alt-ex">Sorry, I'm short on cash — can I pay you tomorrow?</span></div>
+        <div class="alt-item"><span class="alt-expr">I'm strapped (for cash)</span> <span class="alt-stars">⭐⭐⭐</span> <span class="alt-kr">— 돈이 쪼들린다</span><span class="alt-ex">We've been strapped lately with the new expenses.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever said no to something because you were broke? What was it?</div>
+        <div class="sp-answer">
+          → I was totally broke after moving to a new apartment — no furniture for months.<br>
+          → When I was in college, I was always broke and had to skip a lot of social plans.<br>
+          → I had to turn down a trip with friends because I was broke that month.<br>
+          → I've been a little broke lately so I've been cooking at home more.<br>
+          → I was broke after the holidays and had to be really careful for a few weeks.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"It's because we're broke."</em><br>
+            → Lucy가 관계의 문제를 감정이 아닌 경제적 현실로 정의하는 이 영화의 핵심 대사.
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스</h4>
+            broke = 일시적 돈 없음 (자기 자신에게 편하게 쓸 수 있는 표현)<br>
+            poor = 장기적 가난 (직접 쓰면 실례가 될 수 있음)
+          </div>
+          <div class="note-section">
+            <h4>확장표현</h4>
+            "dead broke" — 완전히 빈털터리 (강조)<br>
+            "go broke" — 파산하다, 돈을 다 날리다<br>
+            "I'm a little short right now." — 지금 좀 빠듯해 (broke보다 부드러운 표현)
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 매우 자주 사용 — "I don't have money"보다 훨씬 자연스러운 표현
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Expression #9 ── -->
+    <div id="d2-expr9" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">9</div>
+        <div>
+          <div class="expr-title">I wish (that) ~</div>
+          <div class="expr-kr">~이면 좋겠어 &nbsp;/&nbsp; ~이었으면 &nbsp;/&nbsp; ~하지 않았으면 (현실과 다른 소원·아쉬움)</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>I wish (that) ~</strong> — 현재 실현 불가/가능성 낮은 소원 (가정법)<br>
+          <em>wish vs hope</em>: wish = 현재 실현 불가 / hope = 미래에 실현 가능한 소망 (직설법)
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">할랄 카트에서 먹어도 괜찮은 사람이었으면 좋겠어.</div><div class="example-en">I wish that I didn't care if we ate from a halal cart.</div></div>
+        <div class="example-pair"><div class="example-kr">나 여기서 사는 게 더 좋은 사람이었으면 좋겠어.</div><div class="example-en">I wish I liked living here more.</div></div>
+        <div class="example-pair"><div class="example-kr">시간이 더 있었으면 좋겠어.</div><div class="example-en">I wish I had more time.</div></div>
+        <div class="example-pair"><div class="example-kr">지금 네 옆에 있을 수 있으면 좋겠어.</div><div class="example-en">I wish I could be there with you right now.</div></div>
+        <div class="example-pair"><div class="example-kr">그 말을 하지 않았으면 좋겠어.</div><div class="example-en">I wish I hadn't said that.</div></div>
+        <div class="example-pair"><div class="example-kr">상황이 달랐으면 좋겠어.</div><div class="example-en">I wish things were different.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">If only ~</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— ~이기만 하면 (강한 아쉬움·간절함)</span><span class="alt-ex">If only I had more money.</span></div>
+        <div class="alt-item"><span class="alt-expr">I hope ~</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— ~하면 좋겠어 (실현 가능한 미래 소망 — wish와 구분!)</span><span class="alt-ex">I hope it works out.</span></div>
+        <div class="alt-item"><span class="alt-expr">I should have ~</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— ~했어야 했는데 (과거 후회)</span><span class="alt-ex">I should have said something.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Is there something about yourself or your life right now that you wish were a little different?</div>
+        <div class="sp-answer">
+          → I wish I were better at saving money.<br>
+          → I wish I didn't care so much about what other people think.<br>
+          → I wish I had more free time on weekdays.<br>
+          → I wish I could speak English more naturally without thinking too much.<br>
+          → I wish I had started exercising earlier in my life.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"I wish that I didn't care if we ate from a halal cart on our five-year anniversary."</em><br>
+            → 자신이 그런 것에 개의치 않는 사람이면 좋겠지만 현실은 그렇지 않다는 솔직한 고백.<br>
+            <em>halal cart</em>: 뉴욕 거리의 할랄 푸드 카트 — 저렴한 길거리 음식의 상징. 기념일 레스토랑과 대비됨.
+          </div>
+          <div class="note-section">
+            <h4>wish vs hope 핵심 구분</h4>
+            "I wish I were rich." — 지금 부자 아님 (가정법, 현재 불가)<br>
+            "I hope I get the job." — 가능성 있음 (직설법, 미래 소망)
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트 (가정법)</h4>
+            ✓ I wish I <strong>were</strong> taller. (be동사는 were — 가정법)<br>
+            ✗ I wish I <u>am</u> taller.<br><br>
+            ✓ I wish I <strong>had studied</strong> harder. (과거완료 — 과거 후회)<br>
+            ✗ I wish I <u>studied</u> harder.
+          </div>
+          <div class="note-section">
+            <h4>확장표현</h4>
+            "I wish you would ~" — 상대방 행동에 대한 바람·불만: I wish you would listen.<br>
+            "I wish I could ~" — 현재 능력 부족 아쉬움: I wish I could sing.
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 매우 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Grammar G3 ── -->
+    <div id="d2-grammar3" class="grammar-card">
+      <div class="grammar-header">
+        <span class="grammar-tag">Grammar [G3]</span>
+        <span class="grammar-title">however + 형용사/부사 + S + V</span>
+      </div>
+
+      <div class="grammar-content">
+        <div class="grammar-rule">
+          <div class="rule-head">however + 형용사/부사 + S + V — 아무리 ~하더라도</div>
+          원문: <em style="color:var(--pink);">"however much you hate me, I promise, I hate myself more."</em>
+        </div>
+
+        <div class="grammar-rule" style="background:var(--pink-pale); border-left-color:var(--pink);">
+          <div class="rule-head" style="color:var(--pink);">연습 문장</div>
+          <span class="g-example">However much it costs, I'll pay for it.</span><br>
+          <span class="g-example">However hard it is, don't give up.</span>
+        </div>
+
+        <div class="grammar-tip">
+          💡 <strong>구어에서는 "no matter how ~"가 더 자연스러워요</strong><br>
+          No matter how much you hate me = however much you hate me
+        </div>
+
+        <details class="grammar-notes">
+          <summary>강사노트 열기 / 닫기</summary>
+          <div class="notes-content">
+            <div class="note-section note-highlight">
+              <h4>수업 핵심 포인트</h4>
+              ⚠️ 회화 사용빈도: 일상 구어보다 <strong>격식·문어체에 가까움</strong>.<br>
+              이 대사 이해 목적으로 설명하되, 학습자가 직접 쓸 표현은 <strong>"no matter how ~"</strong>로 안내 권장.
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+
+    <!-- ── Expression #10 ── -->
+    <div id="d2-expr10" class="expr-card">
+      <div class="expr-header">
+        <div class="expr-num">10</div>
+        <div>
+          <div class="expr-title">It's not because ~ It's because ~</div>
+          <div class="expr-kr">~때문이 아니야. ~때문이야. (이유 대조·정정)</div>
+        </div>
+      </div>
+
+      <div class="def-block">
+        <div class="block-label">💬 Expression</div>
+        <div class="def-content">
+          <strong>It's not because ~ It's because ~</strong> — 오해를 먼저 부정하고 진짜 이유를 강하게 설명<br>
+          더 부드럽게: "It's not that ~ It's just that ~"
+        </div>
+      </div>
+
+      <div class="examples-block">
+        <div class="block-label">📝 Examples</div>
+        <div class="example-pair"><div class="example-kr">사랑이 없어서가 아니야. 돈이 없어서야.</div><div class="example-en">It's not because we're not in love. It's because we're broke.</div></div>
+        <div class="example-pair"><div class="example-kr">네가 싫어서가 아니야. 그냥 지쳐서야.</div><div class="example-en">It's not because I don't like you. It's because I'm exhausted.</div></div>
+        <div class="example-pair"><div class="example-kr">실력이 없어서가 아니야. 기회가 없어서야.</div><div class="example-en">It's not because you're not talented. It's because you haven't had the chance.</div></div>
+        <div class="example-pair"><div class="example-kr">나쁜 사람이라서가 아니야. 타이밍이 안 맞아서야.</div><div class="example-en">It's not because he's a bad person. It's because the timing is off.</div></div>
+        <div class="example-pair"><div class="example-kr">관심 없어서가 아니야. 그냥 바빠서야.</div><div class="example-en">It's not because I don't care. It's just because I've been busy.</div></div>
+        <div class="example-pair"><div class="example-kr">포기해서가 아니야. 더 나은 방법을 찾아서야.</div><div class="example-en">It's not because I gave up. It's because I found a better way.</div></div>
+      </div>
+
+      <div class="alts-block">
+        <div class="block-label">🔄 Related Expressions</div>
+        <div class="alt-item"><span class="alt-expr">It's not that ~ It's just that ~</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— ~라는 게 아니라, 그냥 ~인 거야 (더 부드러운 정정)</span><span class="alt-ex">It's not that I don't want to. It's just that I can't right now.</span></div>
+        <div class="alt-item"><span class="alt-expr">Don't get me wrong ~</span> <span class="alt-stars">⭐⭐⭐⭐</span> <span class="alt-kr">— 오해하지 마 (오해 먼저 방지할 때)</span><span class="alt-ex">Don't get me wrong — I like him. I just need space.</span></div>
+        <div class="alt-item"><span class="alt-expr">The thing is ~</span> <span class="alt-stars">⭐⭐⭐⭐⭐</span> <span class="alt-kr">— 사실은 ~이야 (설명 전 부드러운 전환)</span><span class="alt-ex">The thing is, I just don't have the time right now.</span></div>
+      </div>
+
+      <div class="sp-block">
+        <div class="block-label">🗣 Speaking Practice</div>
+        <div class="sp-q">Q: Think of a time you wanted to correct a misunderstanding about why you did or felt something.</div>
+        <div class="sp-answer">
+          → It's not because I don't care — it's because I didn't know what to say.<br>
+          → It's not because I was angry at you. It's because I was stressed about something else.<br>
+          → It's not because I'm shy. It's because I'm tired today.<br>
+          → It's not because I don't want to go. It's because I already have plans.<br>
+          → It's not because the food was bad. It's just because I wasn't hungry.
+        </div>
+      </div>
+
+      <details class="teacher-notes">
+        <summary>강사노트 열기 / 닫기</summary>
+        <div class="notes-content">
+          <div class="note-section note-highlight">
+            <h4>대사 속 쓰임</h4>
+            원문: <em>"It's not because we're not in love. It's because we're broke."</em><br>
+            → 이 영화의 핵심 대사. 관계의 문제를 감정이 아닌 경제적 현실로 정의.
+          </div>
+          <div class="note-section">
+            <h4>뉘앙스 차이</h4>
+            "It's not because ~"는 강하게 부정 / "It's not that ~"은 더 부드럽게 정정.<br>
+            감정이 실릴 때 "because" 버전 사용.
+          </div>
+          <div class="note-section">
+            <h4>문법 포인트</h4>
+            because 뒤엔 절(주어+동사) 필요<br>
+            ✓ It's not because I'm angry.<br>
+            ✗ It's not because <u>angry</u>.
+          </div>
+          <div class="note-section note-verified">
+            <h4>실제 사용빈도</h4>
+            ✅ 해명·설명 상황에서 매우 자주 사용
+          </div>
+        </div>
+      </details>
+    </div>
+
+
+    <!-- ── Wrapup Day 2 ── -->
+    <div id="d2-wrapup" class="wrapup-section">
+      <div class="wrapup-header">📌 &nbsp;한눈에 정리 — Materialists Set 9 &nbsp;/&nbsp; 6월 Day 2</div>
+
+      <div class="wrapup-item"><span class="wrapup-num">1.</span><span class="wrapup-expr">That's the cheapest we'll ever get</span><span class="wrapup-kr">— 이게 우리가 구할 수 있는 가장 싼 거야</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">2.</span><span class="wrapup-expr">It's been + 시간</span><span class="wrapup-kr">— (시간)이 됐어 / (시간)이나 지났어</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">3.</span><span class="wrapup-expr">pay vs pay for</span><span class="wrapup-kr">— 돈을 내다 / ~값을 내다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">4.</span><span class="wrapup-expr">extortion / That's extortion</span><span class="wrapup-kr">— 완전 바가지야 / 강도짓이네</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">5.</span><span class="wrapup-expr">agree to vs agree on</span><span class="wrapup-kr">— ~하기로 하다 / ~에 합의하다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">6.</span><span class="wrapup-expr">charge (someone) + 금액</span><span class="wrapup-kr">— ~에게 ~를 청구하다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">7.</span><span class="wrapup-expr">make me feel like ~</span><span class="wrapup-kr">— 나를 ~처럼 느끼게 하다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">8.</span><span class="wrapup-expr">be broke</span><span class="wrapup-kr">— 돈이 없다, 빈털터리다</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">9.</span><span class="wrapup-expr">I wish (that) ~</span><span class="wrapup-kr">— ~이면 좋겠어 (현실과 다른 소원·아쉬움)</span></div>
+      <div class="wrapup-item"><span class="wrapup-num">10.</span><span class="wrapup-expr">It's not because ~ It's because ~</span><span class="wrapup-kr">— ~때문이 아니야. ~때문이야.</span></div>
+
+      <div class="wrapup-grammar">
+        <div class="wrapup-grammar-item">
+          <span class="wrapup-grammar-tag">Grammar G1</span>
+          <span style="color:#ccc;"><em>Why would you ~?</em> — "말이 안 된다"는 감정이 실린 의아함·불만 (vs Why did you ~?)</span>
+        </div>
+        <div class="wrapup-grammar-item">
+          <span class="wrapup-grammar-tag">Grammar G2</span>
+          <span style="color:#ccc;"><em>Do you know how + 형용사 + it is to V?</em> — it is 절대 빠뜨리지 않기</span>
+        </div>
+        <div class="wrapup-grammar-item">
+          <span class="wrapup-grammar-tag">Grammar G3</span>
+          <span style="color:#ccc;"><em>however + 형용사 + S+V</em> — 구어는 "no matter how ~" 권장</span>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content day2 -->
+
+  <!-- ══════════════════════════════════ DAY 3 ══════════════════════════════════ -->
+  <div class="day-banner" id="day3">
+    📖 &nbsp;Day 3 — Materialists &nbsp;/&nbsp; 6월 3회차
+  </div>
+
+  <div class="content" id="content-day3">
+
+    <!-- ── Grammar G1 ── -->
+    <div class="expr-card" id="d3-grammar1">
+      <div class="expr-header">
+        <div class="expr-num" style="background:#4a2d9c;">G</div>
+        <div>
+          <div class="expr-title">start + V-ing &nbsp;vs&nbsp; start + to V</div>
+          <div class="expr-kr">둘 다 가능 — 뉘앙스 차이만 있음</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Grammar Point</div>
+        <div class="def-content">
+          <strong>start + V-ing</strong> : ~하기 시작하다 (자연스럽게 진행되는 과정 강조)<br>
+          <strong>start + to V</strong> : ~하기 시작하다 (의식적인 시작·전환점 강조)<br><br>
+          📌 핵심: 일상에서 대부분 둘 다 가능 — 뉘앙스 차이만 있음
+        </div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">start + V-ing 예문</div>
+        <div class="ex-pair"><div class="ex-kr">집에 오다가 비가 오기 시작했어.</div><div class="ex-en">It started raining on my way home.</div></div>
+        <div class="ex-pair"><div class="ex-kr">여기서 일한 지 3년 됐어.</div><div class="ex-en">I started working here three years ago.</div></div>
+        <div class="ex-pair"><div class="ex-kr">걔 갑자기 울기 시작했어.</div><div class="ex-en">She started crying out of nowhere.</div></div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">start + to V 예문</div>
+        <div class="ex-pair"><div class="ex-kr">뭔가 잘못됐다는 걸 알아채기 시작했어.</div><div class="ex-en">I started to realize something was wrong.</div></div>
+        <div class="ex-pair"><div class="ex-kr">면접 전에 긴장되기 시작했어.</div><div class="ex-en">He started to get nervous before the interview.</div></div>
+        <div class="ex-pair"><div class="ex-kr">더 나은 매칭을 받기 시작할 수 있어.</div><div class="ex-en">I can start to get better matches.</div></div>
+      </div>
+      <div class="examples-block" style="background:#fff8f0;">
+        <div class="block-label" style="color:#c05a00;">⚠️ 주의</div>
+        <div class="def-content">
+          ✓ 실제로 둘 다 자주 씀 — 틀린 선택은 없음<br>
+          ⚠️ 단, <strong>like / love / hate / enjoy</strong> 뒤엔 항상 <strong>V-ing</strong><br>
+          &nbsp;&nbsp;&nbsp;✓ I love cooking. &nbsp;&nbsp; ✗ I love to cook. (문법은 가능하나 훨씬 덜 자연스러움)
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"I can start getting better matches." — 클라이언트가 피드백을 통해 앞으로 더 나은 매칭을 받기 시작할 수 있다는 의미. start + V-ing 사용.</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">뉘앙스 차이</div>
+          <div class="note-content">
+            • start + V-ing: 과정·흐름이 자연스럽게 시작될 때 (날씨, 습관, 감정 변화)<br>
+            • start + to V: 의식적·의도적 전환이 느껴질 때 (깨닫기 시작함, 계획 실행)<br>
+            • 실제 원어민 대화에서는 거의 구분 없이 사용
+          </div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "begin + V-ing / to V" — start와 동일한 패턴, 조금 더 격식체<br>
+            • "get started + V-ing" — 본격적으로 시작하다 (구어적 강조)<br>
+            • like / love / hate / enjoy / keep / finish / avoid → 반드시 V-ing만
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 매우 자주 사용 — 두 형태 모두</div>
+        </div>
+      </details>
+    </div><!-- /grammar G1 -->
+
+    <!-- ── 표현 #1 ── -->
+    <div class="expr-card" id="d3-expr1">
+      <div class="expr-header">
+        <div class="expr-num">1</div>
+        <div>
+          <div class="expr-title">I want to meet someone who ~ &nbsp;/&nbsp; I (verb) + someone who ~</div>
+          <div class="expr-kr">~한 사람을 만나고 싶어 / ~한 사람을 [찾고 있어 / 원해 / 만났어]</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Expression</div>
+        <div class="def-content">
+          <strong>I want to meet someone who ~</strong> : ~한 사람을 만나고 싶어<br>
+          <strong>I (verb) + someone who ~</strong> : ~한 사람을 [찾고 있어 / 원해 / 만났어]<br>
+          <strong>someone I can ~</strong> : 내가 ~할 수 있는 사람
+        </div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">Examples</div>
+        <div style="color:#888;font-size:12px;margin-bottom:8px;">[이상형 — 연애]</div>
+        <div class="ex-pair"><div class="ex-kr">나 음악 취향 비슷한 사람 만나고 싶어.</div><div class="ex-en">I want to meet someone who has similar taste in music.</div></div>
+        <div class="ex-pair"><div class="ex-kr">대화가 잘 통하는 사람 만나고 싶어.</div><div class="ex-en">I want to meet someone I can actually talk to.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나이 들어도 같이 웃을 수 있는 사람 찾고 있어.</div><div class="ex-en">I'm looking for someone I can laugh with even when things get hard.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나는 내 얘기를 진짜 들어줄 수 있는 사람이 필요해.</div><div class="ex-en">I need someone who actually listens.</div></div>
+        <div style="color:#888;font-size:12px;margin:10px 0 8px;">[이미 함께 있는 사람 묘사]</div>
+        <div class="ex-pair"><div class="ex-kr">남편이 어떤 사람인지 — 항상 내 편인 사람이에요.</div><div class="ex-en">My husband is someone who always has my back.</div></div>
+        <div class="ex-pair"><div class="ex-kr">우리 파트너는 나를 있는 그대로 봐줘.</div><div class="ex-en">My partner is someone who sees me for who I am.</div></div>
+        <div style="color:#888;font-size:12px;margin:10px 0 8px;">[일상 응용]</div>
+        <div class="ex-pair"><div class="ex-kr">진짜 나를 알아봐 줄 수 있는 사람 만나고 싶어.</div><div class="ex-en">I want to meet someone who really gets me.</div></div>
+      </div>
+      <div class="alts-block">
+        <div class="block-label">Related / Alternative</div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>I'm looking for someone who ~</strong> ⭐⭐⭐⭐⭐ — 이상형을 설명할 때 가장 자주 쓰는 표현<br><span style="margin-left:28px;color:#666;">I'm looking for someone who makes me feel calm.</span></div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>I need someone I can ~</strong> ⭐⭐⭐⭐⭐ — 필요한 관계의 조건을 말할 때<br><span style="margin-left:28px;color:#666;">I need someone I can trust completely.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>The kind of person I want is ~</strong> ⭐⭐⭐ — 조금 더 격식·설명체<br><span style="margin-left:28px;color:#666;">The kind of person I want is someone grounded and kind.</span></div>
+      </div>
+      <div class="sp-block">
+        <div class="block-label">Speaking Practice</div>
+        <div class="sp-q">Q: What's one quality you want in someone — a partner, a friend, or anyone important in your life?</div>
+        <div class="sp-answers">
+          <div>→ I want to meet someone who makes me feel like myself.</div>
+          <div>→ I'm looking for someone I can be completely honest with.</div>
+          <div>→ I need someone who's okay with silence — not every moment needs to be filled.</div>
+          <div>→ My partner is someone who always makes me feel heard.</div>
+          <div>→ I just want to be with someone who is always honest with me.</div>
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"I want to meet someone who is a combination of all the different awesome parts" / "I need to meet someone more grown. Someone I can talk to."</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">패턴 구조 핵심</div>
+          <div class="note-content">
+            • someone who + 동사: someone who listens / who gets me / who makes me laugh<br>
+            • someone I can + 동사원형: someone I can trust / talk to / rely on / be myself with<br>
+            • "someone I can talk to" → talk to의 전치사 to가 끝에 오는 것이 자연스러운 구어체<br>
+            &nbsp;&nbsp;✓ someone I can talk to (자연스러움)<br>
+            &nbsp;&nbsp;✓ someone to whom I can talk (격식체, 어색)
+          </div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "I want to be with someone who ~" — 함께 있고 싶은 사람<br>
+            • "I'm hoping to find someone who ~" — 찾길 바라는 사람 (더 소망·희망 뉘앙스)<br>
+            • "She's the kind of person who ~" — 걔는 ~하는 타입이야<br>
+            • 동사 목록: want to meet / am looking for / need / hope to find / am with / found / am married to / am dating
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 매우 자주 사용 — 소개팅, 결혼, 우정 모든 맥락에서 필수 패턴</div>
+        </div>
+      </details>
+    </div><!-- /expr1 -->
+
+    <!-- ── 표현 #2 ── -->
+    <div class="expr-card" id="d3-expr2">
+      <div class="expr-header">
+        <div class="expr-num">2</div>
+        <div>
+          <div class="expr-title">combination of</div>
+          <div class="expr-kr">~의 조합, ~을 합쳐놓은 것</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Expression</div>
+        <div class="def-content"><strong>combination of ~</strong> : ~의 조합, ~을 합쳐놓은 것</div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">Examples</div>
+        <div class="ex-pair"><div class="ex-kr">이 요리는 단맛이랑 매운맛의 조합이야.</div><div class="ex-en">This dish is a combination of sweet and spicy.</div></div>
+        <div class="ex-pair"><div class="ex-kr">걔 성격은 외향적인 면이랑 내성적인 면이 섞여있어.</div><div class="ex-en">She's a combination of extrovert and introvert.</div></div>
+        <div class="ex-pair"><div class="ex-kr">이 향수는 꽃향기랑 나무 향의 조합이야.</div><div class="ex-en">This perfume is a combination of floral and woody notes.</div></div>
+        <div class="ex-pair"><div class="ex-kr">이번 프로젝트는 창의성과 분석력이 다 필요해.</div><div class="ex-en">This project requires a combination of creativity and analytical thinking.</div></div>
+        <div class="ex-pair"><div class="ex-kr">이 문제는 운이랑 실력 둘 다야.</div><div class="ex-en">It's a combination of luck and skill.</div></div>
+        <div class="ex-pair"><div class="ex-kr">지금 내 감정이 복잡해 — 설레기도 하고 무섭기도 해.</div><div class="ex-en">I feel a combination of excitement and fear right now.</div></div>
+      </div>
+      <div class="alts-block">
+        <div class="block-label">Related / Alternative</div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>a mix of ~</strong> ⭐⭐⭐⭐⭐ — 가장 일상적인 대체표현<br><span style="margin-left:28px;color:#666;">It's a mix of jazz and hip-hop.</span></div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>a blend of ~</strong> ⭐⭐⭐⭐ — 부드럽게 섞인 느낌, 커피·향수·음악 맥락<br><span style="margin-left:28px;color:#666;">It's a blend of cultures.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>part A, part B</strong> ⭐⭐⭐⭐ — 반반 섞인 느낌의 구어 표현<br><span style="margin-left:28px;color:#666;">It's part comedy, part drama.</span></div>
+      </div>
+      <div class="sp-block">
+        <div class="block-label">Speaking Practice</div>
+        <div class="sp-q">Q: How would you describe yourself or something you love using "a combination of"?</div>
+        <div class="sp-answers">
+          <div>→ I think I'm a combination of my mom's warmth and my dad's stubbornness.</div>
+          <div>→ My taste in music is a combination of old-school R&B and indie pop.</div>
+          <div>→ This neighborhood is a combination of quiet streets and great restaurants.</div>
+          <div>→ My job requires a combination of patience and quick thinking.</div>
+          <div>→ My ideal weekend is a combination of doing nothing and seeing people I love.</div>
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"I want to meet someone who is a combination of all the different awesome parts of the last four matches." — 이전 4명의 매칭 상대들에서 각각 좋았던 점만 모은 사람을 원한다는 의미.</div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "a mix of ~" — 가장 일상적 대체<br>
+            • "a blend of ~" — 조화롭게 섞인 느낌 (커피, 문화, 감정)<br>
+            • "part ~, part ~" — 딱 반반 나눠진 느낌 (구어체에서 자주)<br>
+            • "a balance of ~" — 균형 잡힌 조합
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 매우 자주 사용 — 감정·성격·취향·재료 등 모든 맥락</div>
+        </div>
+      </details>
+    </div><!-- /expr2 -->
+
+    <!-- ── 표현 #3 ── -->
+    <div class="expr-card" id="d3-expr3">
+      <div class="expr-header">
+        <div class="expr-num">3</div>
+        <div>
+          <div class="expr-title">turn + 나이 &nbsp;/&nbsp; be turning + 나이</div>
+          <div class="expr-kr">~살이 되다 / ~살이 돼 (곧 생일이 됨)</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Expression</div>
+        <div class="def-content">
+          <strong>be turning + 나이</strong> : ~살이 돼 (곧 생일이 됨, 진행 중)<br>
+          <strong>turn + 나이</strong> : ~살이 되다 (나이가 바뀌는 시점)
+        </div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">Examples</div>
+        <div class="ex-pair"><div class="ex-kr">나 몇 달 있으면 마흔이야.</div><div class="ex-en">I'm turning 40 in a few months.</div></div>
+        <div class="ex-pair"><div class="ex-kr">걔 이번 주에 서른이 돼.</div><div class="ex-en">She's turning 30 this week.</div></div>
+        <div class="ex-pair"><div class="ex-kr">올해 우리 회사 창립 10주년이야.</div><div class="ex-en">Our company is turning 10 this year.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나 서른 됐을 때 진짜 아무 감흥이 없었어.</div><div class="ex-en">When I turned 30, I honestly didn't feel anything.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나 작년에 마흔다섯이 됐어.</div><div class="ex-en">I turned 45 last year.</div></div>
+        <div class="ex-pair"><div class="ex-kr">와, 벌써 스물다섯이야? 시간 진짜 빠르다.</div><div class="ex-en">You're turning 25 already? Time flies.</div></div>
+      </div>
+      <div class="alts-block">
+        <div class="block-label">Related / Alternative</div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>be about to turn ~</strong> ⭐⭐⭐⭐ — 이제 막 ~살이 되려고 하다<br><span style="margin-left:28px;color:#666;">I'm about to turn 50 next month.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>hit ~</strong> ⭐⭐⭐⭐⭐ — ~살이 되다 (구어체, 강조)<br><span style="margin-left:28px;color:#666;">When I hit 40, everything changed.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>be [나이] years old</strong> ⭐⭐⭐⭐⭐ — 단순히 나이를 말할 때 (turn처럼 "바뀌는 시점" 뉘앙스 없음)</div>
+      </div>
+      <div class="sp-block">
+        <div class="block-label">Speaking Practice</div>
+        <div class="sp-q">Q: Think of a birthday coming up — yours or someone close to you. How would you say it?</div>
+        <div class="sp-answers">
+          <div>→ I'm turning 40 next year and I'm honestly a little nervous.</div>
+          <div>→ My son is turning 10 next month — I can't believe it.</div>
+          <div>→ My best friend is turning 30 this summer. We're planning a big trip.</div>
+          <div>→ I turned 35 last month. It went by so fast.</div>
+          <div>→ My parents are turning 60 this year. We want to do something special.</div>
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"I'm turning 48 in a few months" — 아직 48살이 아닌데 곧 된다는 뉘앙스. be turning = 진행형으로 "되어가는 과정 중"임을 강조.</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">turn vs become</div>
+          <div class="note-content">나이에는 "become 48" 쓰지 않음 — turn 또는 hit 사용이 자연스러움.</div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "hit + 나이" — 마흔 됐을 때 / 쉰 넘었을 때 (구어, 임팩트 강조)<br>
+            • "be [나이] going on [나이]" — 나이는 [숫자]인데 [다른 숫자]처럼 행동해 (유머)<br>
+            &nbsp;&nbsp;예: She's 48 going on 25. (나이는 마흔여덟인데 스물다섯처럼 살아.)<br>
+            • "be pushing [나이]" — ~살이 다 돼가다 (나이 많아짐 강조)<br>
+            &nbsp;&nbsp;예: He's pushing 60. (예순이 다 돼가.)
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">발음</div>
+          <div class="note-content">"turning 48" 연음 → [tɜːrnɪŋ fɔːrtiˈeɪt]</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 매우 자주 사용</div>
+        </div>
+      </details>
+    </div><!-- /expr3 -->
+
+    <!-- ── 표현 #4 ── -->
+    <div class="expr-card" id="d3-expr4">
+      <div class="expr-header">
+        <div class="expr-num">4</div>
+        <div>
+          <div class="expr-title">immature &nbsp;↔&nbsp; grown / mature</div>
+          <div class="expr-kr">철없는, 미성숙한 ↔ 어른스러운, 성숙한</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Expression</div>
+        <div class="def-content">
+          <strong>immature</strong> : 철없는, 미성숙한, 유치한<br>
+          <strong>grown / mature</strong> : 어른스러운, 성숙한
+        </div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">Examples</div>
+        <div class="ex-pair"><div class="ex-kr">걔 나이에 비해 좀 철없어.</div><div class="ex-en">He's a bit immature for his age.</div></div>
+        <div class="ex-pair"><div class="ex-kr">유치하게 굴지 마.</div><div class="ex-en">Stop being so immature.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나 그냥 진짜 어른스러운 사람을 만나고 싶어.</div><div class="ex-en">I just want to meet someone more grown.</div></div>
+        <div class="ex-pair"><div class="ex-kr">걘 나이보다 성숙해.</div><div class="ex-en">She's really mature for her age.</div></div>
+        <div class="ex-pair"><div class="ex-kr">우리 관계가 훨씬 성숙해진 것 같아.</div><div class="ex-en">Our relationship feels so much more mature now.</div></div>
+        <div class="ex-pair"><div class="ex-kr">솔직히 걔 행동이 좀 유치했어.</div><div class="ex-en">Honestly, the way he acted was kind of immature.</div></div>
+      </div>
+      <div class="alts-block">
+        <div class="block-label">Related / Alternative</div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>childish</strong> ⭐⭐⭐⭐⭐ — 유치한, 어린애 같은 (부정적, 행동 묘사에 더 자주 사용)<br><span style="margin-left:28px;color:#666;">That's so childish.</span></div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>grown-up</strong> ⭐⭐⭐⭐ — 어른스러운 (명사·형용사 모두 가능)<br><span style="margin-left:28px;color:#666;">She handles things in such a grown-up way.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>act your age</strong> ⭐⭐⭐⭐ — 나이답게 행동해 (철없는 상대에게)<br><span style="margin-left:28px;color:#666;">Come on, act your age.</span></div>
+      </div>
+      <div class="sp-block">
+        <div class="block-label">Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever met someone who seemed mature or immature for their age?</div>
+        <div class="sp-answers">
+          <div>→ My younger sister is way more mature than me — she always thinks before she speaks.</div>
+          <div>→ I've worked with people in their 40s who were honestly kind of immature.</div>
+          <div>→ My nephew is only 12 but he's incredibly mature for his age.</div>
+          <div>→ I used to be pretty immature in my 20s — I've grown a lot since then.</div>
+          <div>→ I want to be with someone mature — someone calm and easy to talk to.</div>
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"My last couple girlfriends were 21 and 24... and they were honestly kind of immature." / "I think I need to meet someone more grown."</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">뉘앙스 차이</div>
+          <div class="note-content">
+            <strong>immature vs childish:</strong><br>
+            • immature: 전반적인 성숙도 부족 (성격·감정·사고 전체)<br>
+            • childish: 특정 행동이 어린애 같을 때 (그 순간의 행동 묘사)<br><br>
+            <strong>grown vs mature:</strong><br>
+            • grown: 구어체, 더 따뜻하고 일상적 ("someone more grown")<br>
+            • mature: 다소 격식, 심리·감정 성숙도 표현에 자주
+          </div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "emotionally mature / emotionally unavailable" — 연애·관계 맥락 핵심 어휘<br>
+            &nbsp;&nbsp;예: He's emotionally immature — not ready for a serious relationship.<br>
+            • "act your age" — 나이에 맞게 행동하라는 타박
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">발음</div>
+          <div class="note-content">immature [ˌɪməˈtʃʊər] — 강세 뒤 (im-ma-TURE)</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 매우 자주 사용 — 연애·직장·육아 모든 맥락</div>
+        </div>
+      </details>
+    </div><!-- /expr4 -->
+
+    <!-- ── 표현 #5 ── -->
+    <div class="expr-card" id="d3-expr5">
+      <div class="expr-header">
+        <div class="expr-num">5</div>
+        <div>
+          <div class="expr-title">I can imagine</div>
+          <div class="expr-kr">그럴 것 같아 / 충분히 이해해 / 상상이 가</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Expression</div>
+        <div class="def-content"><strong>I can imagine (that) ~</strong> : 그럴 것 같아 / 충분히 이해해 / 상상이 가</div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">Examples</div>
+        <div class="ex-pair"><div class="ex-kr">그럴 것 같아. 쉽지 않겠다.</div><div class="ex-en">I can imagine it might be a little hard.</div></div>
+        <div class="ex-pair"><div class="ex-kr">그 상황 충분히 이해해. 진짜 힘들었겠다.</div><div class="ex-en">I can imagine how difficult that must have been.</div></div>
+        <div class="ex-pair"><div class="ex-kr">거기서 사는 게 어떤 건지 상상이 가.</div><div class="ex-en">I can imagine what it's like living there.</div></div>
+        <div class="ex-pair"><div class="ex-kr">그 사람이 얼마나 자랑스러웠을지 알 것 같아.</div><div class="ex-en">I can imagine how proud you must have felt.</div></div>
+        <div class="ex-pair"><div class="ex-kr">처음엔 정말 어색했겠다.</div><div class="ex-en">I can imagine how awkward it was at first.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나라면 진짜 힘들었을 것 같아.</div><div class="ex-en">I can imagine — I'd find that really hard too.</div></div>
+      </div>
+      <div class="alts-block">
+        <div class="block-label">Related / Alternative</div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>I can see how ~</strong> ⭐⭐⭐⭐⭐ — ~가 왜 그런지 이해해<br><span style="margin-left:28px;color:#666;">I can see how that would be frustrating.</span></div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>That must be ~</strong> ⭐⭐⭐⭐⭐ — ~겠다 (공감 표현)<br><span style="margin-left:28px;color:#666;">That must be so hard.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>I get it</strong> ⭐⭐⭐⭐⭐ — 이해해, 알겠어 (더 짧고 캐주얼)<br><span style="margin-left:28px;color:#666;">I get it — it's not easy.</span></div>
+      </div>
+      <div class="alts-block" style="background:#f0f8ff;">
+        <div class="block-label" style="color:#336;">💭 Typical Reactions</div>
+        <div style="font-size:13.5px;line-height:2;">
+          <div>• Yeah, it's been a lot. <span style="color:#888;">(응, 진짜 많이 힘들었어.)</span></div>
+          <div>• Thanks for understanding. <span style="color:#888;">(이해해줘서 고마워.)</span></div>
+          <div>• It's more than you can imagine, honestly. <span style="color:#888;">(솔직히 상상 이상이야.)</span></div>
+          <div>• Right? I'm glad someone gets it. <span style="color:#888;">(그지? 누군가 이해해줘서 다행이야.)</span></div>
+        </div>
+      </div>
+      <div class="sp-block">
+        <div class="block-label">Speaking Practice</div>
+        <div class="sp-q">Q: Think of something a friend or family member is going through — how would you show empathy?</div>
+        <div class="sp-answers">
+          <div>→ I can imagine how stressful that job search has been.</div>
+          <div>→ I can imagine how tired you must be with a newborn.</div>
+          <div>→ I can imagine it's hard being so far from your family.</div>
+          <div>→ I can imagine how excited you felt when you got the news.</div>
+          <div>→ I can imagine how lonely that must feel — I'm sorry you're going through it.</div>
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"I can imagine it might be a little hard to relate to girls born in the 2000s." — Lucy가 클라이언트의 상황을 이해하는 척 하면서도 살짝 비꼬는 뉘앙스.</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">I can imagine vs I understand</div>
+          <div class="note-content">
+            • I can imagine: 직접 경험하지 않았지만 공감·상상 가능<br>
+            • I understand: 직접 경험하거나 명확히 이해함<br>
+            • 상대 감정에 공감할 때 "I can imagine how you feel"이 "I understand how you feel"보다 더 자연스럽고 따뜻하게 들림
+          </div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "I can see how ~" — "그게 왜 그런지 이해해" (원인·이유 공감)<br>
+            • "That must be + 형용사" — 상대방 상황에 대한 추측·공감<br>
+            • "I've been there." — 나도 그런 적 있어 (완전 공감)<br>
+            • "I can only imagine." — 나는 상상만 할 수 있어 (경험 못 한 일에 대한 강한 공감)
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 매우 자주 사용</div>
+        </div>
+      </details>
+    </div><!-- /expr5 -->
+
+    <!-- ── 표현 #6 ── -->
+    <div class="expr-card" id="d3-expr6">
+      <div class="expr-header">
+        <div class="expr-num">6</div>
+        <div>
+          <div class="expr-title">relate to</div>
+          <div class="expr-kr">~와 공감하다, ~를 이해하다, ~에 공감이 되다</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Expression</div>
+        <div class="def-content"><strong>relate to ~</strong> : ~와 공감하다, ~를 이해하다, ~에 공감이 되다</div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">Examples</div>
+        <div class="ex-pair"><div class="ex-kr">2000년대생 여자친구랑 공감대 형성하기 좀 힘들 것 같아.</div><div class="ex-en">It might be a little hard to relate to girls born in the 2000s.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나 그 감정 진짜 공감해.</div><div class="ex-en">I can really relate to that feeling.</div></div>
+        <div class="ex-pair"><div class="ex-kr">걔 경험이 나랑 너무 달라서 공감이 안 돼.</div><div class="ex-en">I just can't relate to her experience — it's too different from mine.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나 청소년기 힘들었어서 그 얘기 들으면 엄청 공감돼.</div><div class="ex-en">I had a tough adolescence, so I really relate to what she's saying.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나 그런 상황은 경험해본 적 없어서 공감하기 어려워.</div><div class="ex-en">I've never been in that situation, so it's hard for me to relate.</div></div>
+        <div class="ex-pair"><div class="ex-kr">그 캐릭터 너무 나 같아서 진짜 공감됐어.</div><div class="ex-en">I related to that character so much — felt like it was me.</div></div>
+      </div>
+      <div class="alts-block">
+        <div class="block-label">Related / Alternative</div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>connect with ~</strong> ⭐⭐⭐⭐⭐ — ~와 통하다, 감정적 유대 강조<br><span style="margin-left:28px;color:#666;">I really connected with her story.</span></div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>identify with ~</strong> ⭐⭐⭐⭐ — ~와 동일시하다 (캐릭터·그룹에 자주)<br><span style="margin-left:28px;color:#666;">I identify with characters who feel like outsiders.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>get ~</strong> ⭐⭐⭐⭐⭐ — ~를 이해하다 (가장 구어적)<br><span style="margin-left:28px;color:#666;">She just gets me.</span></div>
+      </div>
+      <div class="sp-block">
+        <div class="block-label">Speaking Practice</div>
+        <div class="sp-q">Q: Is there a character from a movie, book, or TV show you really related to? Why?</div>
+        <div class="sp-answers">
+          <div>→ I really related to the main character — she was always overthinking everything.</div>
+          <div>→ I related to him because he was trying so hard but nothing seemed to work out.</div>
+          <div>→ Honestly, I couldn't relate to that character at all — our lives are just too different.</div>
+          <div>→ I related to her struggle with work-life balance. It felt very real.</div>
+          <div>→ I related to her — she felt lost, and I know that feeling.</div>
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"I can imagine it might be a little hard to relate to girls born in the 2000s." — Lucy가 클라이언트(48세 남성)의 나이 어린 전 여자친구들과의 공감대 부족을 우회적으로 지적.</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">문법 주의</div>
+          <div class="note-content">
+            relate to + 사람/감정/경험 (to는 전치사 — 따라서 뒤에 명사/동명사)<br>
+            ✓ I can relate to that. &nbsp;&nbsp; ✓ I relate to feeling lost.<br>
+            ✗ I can relate that. (to 빠뜨리기 주의)
+          </div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "connect with ~" — 감정적으로 연결되다 (relate to보다 좀 더 따뜻한 느낌)<br>
+            • "identify with ~" — 특정 그룹·캐릭터와 자신을 동일시할 때<br>
+            • "resonate with ~" — (아이디어·메시지가) 마음에 와닿다<br>
+            &nbsp;&nbsp;예: That message really resonated with me.<br>
+            • "get" — 가장 구어적인 이해·공감 표현
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 매우 자주 사용 — 영화·책·일상 감정 공유 모든 상황에서</div>
+        </div>
+      </details>
+    </div><!-- /expr6 -->
+
+    <!-- ── 표현 #7 ── -->
+    <div class="expr-card" id="d3-expr7">
+      <div class="expr-header">
+        <div class="expr-num">7</div>
+        <div>
+          <div class="expr-title">trust your gut &nbsp;/&nbsp; go with your gut</div>
+          <div class="expr-kr">직감을 믿어 / 느낌대로 해</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Expression</div>
+        <div class="def-content">
+          <strong>trust your gut</strong> : 직감을 믿어, 본능을 따라<br>
+          <strong>go with your gut</strong> : 직감대로 해, 느낌대로 해<br>
+          <strong>my gut says ~</strong> : 내 직감에는 ~
+        </div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">Examples</div>
+        <div class="ex-pair"><div class="ex-kr">그냥 느낌대로 해봐. 보통 맞잖아.</div><div class="ex-en">Just go with your gut — it's usually right.</div></div>
+        <div class="ex-pair"><div class="ex-kr">내 직감으로는 뭔가 이상한 것 같아.</div><div class="ex-en">My gut says something is off.</div></div>
+        <div class="ex-pair"><div class="ex-kr">직감을 믿어봐. 충분히 고민했잖아.</div><div class="ex-en">Trust your gut — you've thought about it enough.</div></div>
+        <div class="ex-pair"><div class="ex-kr">머리로는 아닌데 직감은 맞다고 하고 있어.</div><div class="ex-en">My head says no, but my gut says yes.</div></div>
+        <div class="ex-pair"><div class="ex-kr">나 이상하게 첫 만남부터 느낌이 좋았어.</div><div class="ex-en">I don't know why, but my gut told me right away — I liked him.</div></div>
+        <div class="ex-pair"><div class="ex-kr">직감으로 결정했는데 지금도 후회 없어.</div><div class="ex-en">I went with my gut on that decision and I don't regret it.</div></div>
+      </div>
+      <div class="alts-block">
+        <div class="block-label">Related / Alternative</div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>follow your instincts</strong> ⭐⭐⭐⭐ — 본능을 따르다 (gut보다 조금 격식)<br><span style="margin-left:28px;color:#666;">Sometimes you just have to follow your instincts.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>have a feeling</strong> ⭐⭐⭐⭐⭐ — 느낌이 있어, 느낌이 오다<br><span style="margin-left:28px;color:#666;">I have a feeling this is going to work out.</span></div>
+      </div>
+      <div class="sp-block">
+        <div class="block-label">Speaking Practice</div>
+        <div class="sp-q">Q: Have you ever made a decision based on gut feeling — and were you right?</div>
+        <div class="sp-answers">
+          <div>→ I went with my gut and took that job offer. Best decision I ever made.</div>
+          <div>→ My gut told me something was wrong, and I was right — should have listened sooner.</div>
+          <div>→ I trusted my gut about that friendship and pulled back. Turned out I was right.</div>
+          <div>→ I usually overthink things, but this time I just went with my gut.</div>
+          <div>→ My gut said yes from the moment I walked in. I got the apartment.</div>
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"I trust my gut." — Harry가 전문가인 Lucy보다 자신의 직감이 더 믿을 만하다고 주장하는 장면.</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">"gut"의 의미 확장</div>
+          <div class="note-content">
+            • 원래 의미: 내장, 창자<br>
+            • 비유: 직감, 본능적인 느낌<br>
+            • "gut feeling / gut instinct / gut reaction" 모두 같은 의미<br>
+            • "gut check" = 자신의 직감·양심을 점검하는 것
+          </div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "I have a gut feeling (that) ~" — 직감적으로 ~인 것 같아<br>
+            • "My gut is telling me ~" — 내 직감이 ~라고 말하고 있어<br>
+            • "go with your gut (feeling)" — gut 뒤에 feeling 붙여도 자연스러움<br>
+            • "something feels off" — 뭔가 이상한 느낌이야<br>
+            &nbsp;&nbsp;예: Something feels off about this situation.<br>
+            • "butterflies in my stomach" — 설레거나 긴장될 때
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">발음</div>
+          <div class="note-content">[ɡʌt] — 짧고 강하게</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 매우 자주 사용 — 결정, 관계, 직장 모든 상황에서</div>
+        </div>
+      </details>
+    </div><!-- /expr7 -->
+
+    <!-- ── 표현 #8 ── -->
+    <div class="expr-card" id="d3-expr8">
+      <div class="expr-header">
+        <div class="expr-num">8</div>
+        <div>
+          <div class="expr-title">~ makes it hard (not) to + V</div>
+          <div class="expr-kr">~때문에 ~하기가 (안 하기가) 힘들어</div>
+        </div>
+      </div>
+      <div class="def-block">
+        <div class="block-label">Expression</div>
+        <div class="def-content">
+          <strong>~ makes it hard (not) to + V</strong> : ~때문에 ~하기가 (안 하기가) 힘들어<br><br>
+          💡 "not"이 들어가면 → "~하지 않기 어렵다" = "자연스럽게 하게 된다"
+        </div>
+      </div>
+      <div class="examples-block">
+        <div class="block-label">Examples</div>
+        <div class="ex-pair"><div class="ex-kr">일 때문에 안 마시기가 너무 힘들어.</div><div class="ex-en">Work makes it hard not to drink.</div></div>
+        <div class="ex-pair"><div class="ex-kr">애 있으면 잠을 제대로 자기가 진짜 힘들어.</div><div class="ex-en">Having a kid makes it hard to sleep properly.</div></div>
+        <div class="ex-pair"><div class="ex-kr">이 날씨에는 밖에 나가기가 진짜 싫어.</div><div class="ex-en">This weather makes it hard to want to go outside.</div></div>
+        <div class="ex-pair"><div class="ex-kr">이 노래 들으면 춤 안 추기가 힘들어.</div><div class="ex-en">This song makes it hard not to dance.</div></div>
+        <div class="ex-pair"><div class="ex-kr">그 사람이랑 있으면 웃음을 참기가 힘들어.</div><div class="ex-en">Being around her makes it hard not to laugh.</div></div>
+        <div class="ex-pair"><div class="ex-kr">소셜 미디어가 비교를 안 하기 어렵게 만들어.</div><div class="ex-en">Social media makes it hard not to compare yourself to others.</div></div>
+      </div>
+      <div class="alts-block">
+        <div class="block-label">Related / Alternative</div>
+        <div class="alt-item"><span class="alt-label">대체</span> <strong>it's hard to ~ when ~</strong> ⭐⭐⭐⭐⭐ — ~할 때 ~하기 어려워<br><span style="margin-left:28px;color:#666;">It's hard to relax when there's so much going on.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>~ doesn't make it easy to ~</strong> ⭐⭐⭐ — ~이 ~하는 것을 쉽게 만들어주지 않아<br><span style="margin-left:28px;color:#666;">This schedule doesn't make it easy to have a social life.</span></div>
+        <div class="alt-item"><span class="alt-label">관련</span> <strong>hard to resist</strong> ⭐⭐⭐⭐ — 참기 힘들다<br><span style="margin-left:28px;color:#666;">It's hard to resist when it's right in front of you.</span></div>
+      </div>
+      <div class="sp-block">
+        <div class="block-label">Speaking Practice</div>
+        <div class="sp-q">Q: What's something in your life that makes it hard to do — or not do — something?</div>
+        <div class="sp-answers">
+          <div>→ Working from home makes it hard not to snack all day.</div>
+          <div>→ My phone makes it hard not to check social media every five minutes.</div>
+          <div>→ My schedule makes it hard to exercise regularly.</div>
+          <div>→ Living alone makes it hard not to order delivery every night.</div>
+          <div>→ This job makes it hard not to bring work stress home.</div>
+        </div>
+      </div>
+      <details class="teacher-notes">
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 속 쓰임</div>
+          <div class="note-content">"Work makes it hard not to [drink]." — 직접 "마신다"는 말 대신 "안 마시기가 힘들다"는 구조로 표현. 술이 얼마나 자연스럽게 일상에 녹아 있는지를 간접적으로 드러냄.</div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">구조 분석</div>
+          <div class="note-content">
+            [주어] + makes it hard + (not) to + 동사원형<br>
+            • "not"이 들어가면 → "~하지 않기 어렵다" = "자연히 하게 된다"<br>
+            • "not" 없이 → "~하기 어렵다"<br><br>
+            쉬운 설명: "Work makes it hard not to drink"<br>
+            = 일이 있으니까 안 마시는 게 더 어렵다 = 자연히 마시게 된다
+          </div>
+        </div>
+        <div class="note-section note-verified">
+          <div class="note-title">확장표현</div>
+          <div class="note-content">
+            • "it's hard to ~ without ~ing" — ~없이 ~하기 어려워<br>
+            • "~ makes it impossible to ~" — ~때문에 ~하는 게 불가능해 (강조)<br>
+            • "~ makes it difficult to ~" — makes it hard의 격식체
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">사용빈도</div>
+          <div class="note-content">✅ 자주 사용 — 특히 일상적 어려움·유혹·환경 설명할 때</div>
+        </div>
+      </details>
+    </div><!-- /expr8 -->
+
+    <!-- ── 강사 참고 ── -->
+    <div class="expr-card" style="border-left: 4px solid #888;">
+      <div class="expr-header" style="background:#333;">
+        <div class="expr-num" style="background:#666;">참</div>
+        <div>
+          <div class="expr-title">do pot &nbsp;/&nbsp; So not never — 강사 참고용</div>
+          <div class="expr-kr">수업 활용 여부 Kelly 판단 — 대사 이해용</div>
+        </div>
+      </div>
+      <details class="teacher-notes" open>
+        <summary>📒 강사노트</summary>
+        <div class="note-section note-highlight">
+          <div class="note-title">대사 흐름</div>
+          <div class="note-content">
+            Harry: "Do you do drugs?" → Lucy: "Never." → Harry: "I do pot at parties." → Lucy: "Me too." → Harry: "So not never."<br><br>
+            Lucy가 "절대 안 한다"고 했다가 "나도 해"라고 해버린 모순을 Harry가 유머러스하게 짚는 장면.
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">do pot</div>
+          <div class="note-content">
+            "do pot" = 대마초를 피우다 (= smoke weed / use marijuana)<br>
+            pot = marijuana의 구어 표현 (북미에서 자주 사용)<br>
+            • smoke weed (가장 일반적) / do pot / use pot (구어) / marijuana / cannabis (공식)<br>
+            ⚠️ 수업에서 직접 사용 권장 안 함 — 대사 이해·문화적 맥락 설명 목적으로만
+          </div>
+        </div>
+        <div class="note-section">
+          <div class="note-title">So not never</div>
+          <div class="note-content">
+            "So not never" = "So it's not (the case that) never"의 압축<br>
+            이중 부정처럼 보이지만 실제로는 모순을 짚는 표현.<br>
+            상대가 "never"라고 했다가 실제로는 하는 것이 드러났을 때 "그럼 never가 아니잖아"라고 받아치는 구어 패턴.<br><br>
+            관련: "That's not exactly 'never.'" / "So, basically yes."
+          </div>
+        </div>
+      </details>
+    </div><!-- /강사참고 -->
+
+    <!-- ── 한눈에 정리 ── -->
+    <div class="wrapup-section" id="d3-wrapup">
+      <div class="wrapup-header">✓ &nbsp;한눈에 정리 — Day 3</div>
+      <div class="wrapup-exprs">
+        <div class="wrapup-item"><span class="wrapup-num">[G]</span> <span class="wrapup-en">start + V-ing vs start + to V</span> <span class="wrapup-kr">둘 다 가능 — 뉘앙스 차이</span></div>
+        <div class="wrapup-item"><span class="wrapup-num">1</span> <span class="wrapup-en">I want to meet someone who ~</span> <span class="wrapup-kr">~한 사람을 만나고 싶어 (이상형 묘사 필수 패턴)</span></div>
+        <div class="wrapup-item"><span class="wrapup-num">2</span> <span class="wrapup-en">combination of</span> <span class="wrapup-kr">~의 조합, ~을 합쳐놓은 것</span></div>
+        <div class="wrapup-item"><span class="wrapup-num">3</span> <span class="wrapup-en">turn + 나이 / be turning + 나이</span> <span class="wrapup-kr">~살이 되다 (I'm turning 48)</span></div>
+        <div class="wrapup-item"><span class="wrapup-num">4</span> <span class="wrapup-en">immature ↔ grown / mature</span> <span class="wrapup-kr">철없는 ↔ 어른스러운, 성숙한</span></div>
+        <div class="wrapup-item"><span class="wrapup-num">5</span> <span class="wrapup-en">I can imagine</span> <span class="wrapup-kr">그럴 것 같아, 충분히 이해해</span></div>
+        <div class="wrapup-item"><span class="wrapup-num">6</span> <span class="wrapup-en">relate to</span> <span class="wrapup-kr">~와 공감하다, ~를 이해하다</span></div>
+        <div class="wrapup-item"><span class="wrapup-num">7</span> <span class="wrapup-en">trust your gut / go with your gut</span> <span class="wrapup-kr">직감을 믿어, 느낌대로 해</span></div>
+        <div class="wrapup-item"><span class="wrapup-num">8</span> <span class="wrapup-en">~ makes it hard not to</span> <span class="wrapup-kr">~때문에 안 하기가 힘들어</span></div>
+        <div class="wrapup-item" style="color:#888;"><span class="wrapup-num">참</span> <span class="wrapup-en">do pot / So not never</span> <span class="wrapup-kr">강사 참고용 — 대사 이해용</span></div>
+      </div>
+    </div>
+
+  </div><!-- /content day3 -->
+
+  </div><!-- /content -->
+</main>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', () => {
+  const el = document.documentElement;
+  const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100;
+  document.getElementById('progress-bar').style.width = pct + '%';
+});
+
+// Active nav highlighting
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('nav a');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+
+sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
